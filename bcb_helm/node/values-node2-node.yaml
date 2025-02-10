@@ -1,0 +1,75 @@
+
+nameOverride: node2-msft-node
+
+imagePullSecrets: {}
+defaultImage: hamsaprivacyacrdev.azurecr.io/hamsa-msft-node
+defaultImageTag: 0.0.5
+defaultImagePullPolicy: "Always"
+
+envs:
+  L1_CHAINID: "381660001"
+  L1_URL: http://72.152.58.172:8545
+  DVP_L1URL: http://72.152.58.172:8545
+  DVP_L1MATCHSCADDRESS: 0x7A8D43260aDE397a5924EFFd5fac1d9e45E0d8E1
+  ROLLUP_VERIFYCONFIG_VERIFYCONTRACT: 0x33f83b5C417848ad0482DC5E0f20595ed0931D55
+
+  NODEDB_URL: node2-postgre-postgresql:5432
+  EXECUTOR_URI: node2-msft-executor-api:50081
+  EXECUTOR_UCLURI: node2-msft-executor-api:50081
+  STATE_DB_HOST: node2-postgre-postgresql
+  POOL_DB_HOST: node2-postgre-postgresql
+  EVENTLOG_DB_HOST: node2-postgre-postgresql
+  HASHDB_HOST: node2-postgre-postgresql
+  MONGODB_HOST: node2-mongo-mongodb
+  MONGODB_PORT: "27017"
+  MONGODB_USER: hamsa-dev
+  MONGODB_PASSWORD: dev123
+  
+  L1_DEPLOYERKEYS: 1bf1fbfb91c484e78cb8adb55ff3fee99825b49af57ba0eb0b79f82b3ffb563f,f083c679bb978f6e2eb8611de27319b2e3a329d307eb5fd1d532a1cd6b63fff9
+  L1_GENESISDEPLOYMENT: "true"
+  DVP_L1MATCHSUBMITTERKEYS: 1bf1fbfb91c484e78cb8adb55ff3fee99825b49af57ba0eb0b79f82b3ffb563f,f083c679bb978f6e2eb8611de27319b2e3a329d307eb5fd1d532a1cd6b63fff9
+  
+  DVP_DVPTRANSACTONPRIORITYPERCENT: "50"
+  ROLLUP_URI: node2-msft-prover-rpc:50051
+  ROLLUP_CALLBACKURI: 0.0.0.0:50052
+
+services: 
+  "api":
+    type: LoadBalancer
+    ports:
+    - port: 8123
+      protocol: TCP
+  "callback":
+    ports:
+    - port: 50052
+      protocol: TCP
+
+deployments:
+  "" :
+    replicas: 1
+    containers:
+      - name: app
+        envFrom:
+          - configMapRef:
+              name: node2-msft-node-config
+              optional: true
+          - configMapRef:
+              name: node2-msft-node-envs
+              optional: true
+          - configMapRef:
+              name: node2-msft-node-secrets
+              optional: true
+        command:
+        - "/bin/sh"
+        - "-c"
+        - "/app/hamsa-msft-node_main run --network custom --components=synchronizer,rpc,sequencer,l2gaspricer,eth-tx-manager,rollup --custom-network-file /app/genesis.config.json --cfg /app/node.config.toml"
+        ports:
+          - containerPort: 8123
+            name: api
+            protocol: TCP
+          - containerPort: 50052
+            name: callback
+            protocol: TCP
+    nodeSelector:
+      purpose: "other"
+    imagePullSecret: "acr-secret"

@@ -1,0 +1,49 @@
+
+nameOverride: node4-msft-prover
+
+imagePullSecrets: {}
+defaultImage: hamsaprivacyacrdev.azurecr.io/hamsa-msft-prover
+defaultImageTag: 0.0.5
+defaultImagePullPolicy: "Always"
+
+envs:
+  CALLBACK_ADDRESS: http://node4-msft-node-callback:50052
+
+services: 
+  "rpc":
+    ports:
+    - port: 50051
+      protocol: TCP
+
+deployments:
+  "" :
+    replicas: 1
+    containers:
+      - name: app
+        envFrom:
+          - configMapRef:
+              name: node4-msft-prover-config
+              optional: true
+          - configMapRef:
+              name: node4-msft-prover-envs
+              optional: true
+          - configMapRef:
+              name: node4-msft-prover-secrets
+              optional: true
+
+        preemptionPolicy: Never
+        resources:
+            requests:
+              memory: "11Gi"
+
+        ports:
+          - containerPort: 50051
+            name: rpc
+            protocol: TCP
+        command:
+        - "/bin/sh"
+        - "-c"
+        - "/app/server"
+    nodeSelector:
+      purpose: "prover"
+    imagePullSecret: "acr-secret"

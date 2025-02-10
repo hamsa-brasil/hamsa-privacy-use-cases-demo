@@ -1,0 +1,57 @@
+nameOverride: node3-msft-executor
+
+imagePullSecrets: {}
+defaultImage: hamsaprivacyacrdev.azurecr.io/hamsa-msft-executor
+defaultImageTag: 0.0.5
+defaultImagePullPolicy: "Always"
+
+envs:
+  NODEDB_URL: node3-postgre-postgresql:5432
+  DVP_L1URL: http://72.152.58.172:8545
+  DVP_L1MATCHSUBMITTERKEYS: 518eb784dd768d8c0cdf9218d44ae8f498d0cadf7ecf98f5ecf27c6b793986ca,d9597e2d88463e47d1b6c2431879f06d440a6ff980a51a1f8c830623b112f329
+  DVP_L1MATCHSCADDRESS: 0x7A8D43260aDE397a5924EFFd5fac1d9e45E0d8E1
+
+services: 
+  "api":
+    ports:
+    - port: 50081
+      protocol: TCP
+
+statefulSets:
+  "" :
+    replicas: 1
+    containers:
+      - name: app
+        envFrom:
+          - configMapRef:
+              name: node3-msft-executor-config
+              optional: true
+          - configMapRef:
+              name: node3-msft-executor-envs
+              optional: true
+          - configMapRef:
+              name: node3-msft-executor-secrets
+              optional: true
+        command:
+          - "/bin/sh"
+          - "-c"
+          - "/app/hamsa-msft-executor_main run --cfg /app/executor.config.toml --custom-network-file /app/genesis.config.json"
+        ports:
+          - containerPort: 50081
+            name: executor-api
+            protocol: TCP
+        volumeMounts:
+          - name: app-data
+            mountPath: /app/db/executor-db
+    imagePullSecret: "acr-secret"
+    nodeSelector:
+      purpose: "other"
+    volumeClaimTemplates:
+      - metadata:
+          name: app-data
+        spec:
+          accessModes: [ "ReadWriteOnce" ]
+          storageClassName: "managed-csi"
+          resources:
+            requests:
+              storage: 40Gi

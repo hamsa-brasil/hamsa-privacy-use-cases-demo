@@ -1,0 +1,79 @@
+nameOverride: node3-postgre
+
+defaultImage: hamsaprivacyacrdev.azurecr.io/postgres
+defaultImageTag: latest
+defaultImagePullPolicy: "Always"
+
+envs:
+  POSTGRES_USER: hamsa-dev
+  POSTGRES_PASSWORD: dev123
+
+services: 
+  "postgresql":
+    ports:
+    - port: 5432
+      protocol: TCP
+
+statefulSets:
+  "" :
+    replicas: 1
+    containers:
+      - name: postgresql
+        volumeMounts:
+          - name: postgre-data
+            mountPath: /var/lib/postgresql
+
+          - name: init-sql-vol
+            mountPath: /docker-entrypoint-initdb.d
+        envFrom:
+          - configMapRef:
+              name: node3-postgre-envs
+              optional: false
+
+    imagePullSecret: "acr-secret"
+    volumes:
+      - name: init-sql-vol
+        type: configMap
+        originalName: node3-postgre-init-sql
+
+    nodeSelector:
+      purpose: other
+
+    volumeClaimTemplates:
+      - metadata:
+          name: postgre-data
+        spec:
+          accessModes: [ "ReadWriteOnce" ]
+          storageClassName: "managed-csi"
+          resources:
+            requests:
+              storage: 40Gi
+
+
+configMaps:
+  init-sql:
+    data:
+      init.sql: |
+        CREATE DATABASE state_db;
+        CREATE DATABASE event_db;
+        CREATE DATABASE pool_db;
+        CREATE DATABASE rpc_db;
+        CREATE DATABASE prover_db;
+
+        \c event_db;
+
+
+        CREATE TYPE level_t AS ENUM ('emerg', 'alert', 'crit', 'err', 'warning', 'notice', 'info', 'debug');
+
+        CREATE TABLE public.event (
+                            id BIGSERIAL PRIMARY KEY,
+                            received_at timestamp WITH TIME ZONE default CURRENT_TIMESTAMP,
+                            ip_address inet,
+                            source varchar(32) not null,
+                            component varchar(32),
+                            level level_t not null,
+                            event_id varchar(32) not null,
+                            description text,
+                            data bytea,
+                            json jsonb
+                        );

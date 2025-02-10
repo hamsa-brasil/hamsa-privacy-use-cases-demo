@@ -1,0 +1,45 @@
+nameOverride: node2-mongo
+
+defaultImage: hamsaprivacyacrdev.azurecr.io/mongodb
+defaultImageTag: 0.0.1
+defaultImagePullPolicy: "Always"
+
+envs:
+  MONGO_INITDB_ROOT_USERNAME: hamsa-dev
+  MONGO_INITDB_ROOT_PASSWORD: dev123
+
+
+services: 
+  "mongodb":
+    ports:
+    - port: 27017
+      protocol: TCP
+
+statefulSets:
+  "" :
+    replicas: 1
+    containers:
+      - name: mongodb
+        envFrom:
+          - configMapRef:
+              name: node2-mongo-envs
+              optional: false
+
+        volumeMounts:
+          - name: app-data
+            mountPath: /data/db
+
+    imagePullSecret: "acr-secret"
+    nodeSelector:
+      purpose: other
+    securityContext:
+      runAsUser: 0
+    volumeClaimTemplates:
+      - metadata:
+          name: app-data
+        spec:
+          accessModes: [ "ReadWriteOnce" ]
+          storageClassName: "managed-csi"
+          resources:
+            requests:
+              storage: 40Gi
