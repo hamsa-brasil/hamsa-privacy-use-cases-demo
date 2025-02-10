@@ -1,0 +1,38 @@
+{
+  "name": "hardhat-project",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.8",
+    "@nomicfoundation/hardhat-network-helpers": "^1.0.12",
+    "@nomicfoundation/hardhat-toolbox": "^5.0.0",
+    "@openzeppelin/contracts": "5.1.0",
+    "@openzeppelin/contracts-upgradeable": "5.1.0",
+    "@openzeppelin/contracts5": "npm:@openzeppelin/contracts@^5.1.0",
+    "@openzeppelin/hardhat-upgrades": "^3.6.0",
+    "hardhat": "^2.22.16"
+  },
+  "dependencies": {
+    "@nomicfoundation/hardhat-ignition": "^0.15.8",
+    "ethers": "^6.13.4",
+    "moment": "^2.30.1",
+    "poseidon-lite": "^0.3.0"
+  },
+  "overrides": {
+    "cookie": "^0.7.0",
+    "cross-spawn": "^7.0.5",
+    "elliptic": "^6.5.7",
+    "ws": "^7.5.10"
+  },
+  "scripts": {
+    "deploy-dvp-match-server-L1": "npx hardhat run ./script/deploy_dvp_match.js --network server_L1_besu",
+    "deploy-rollup-server-L1": "npx hardhat run ./script/deploy_verifier_l1.js --network server_L1_besu",
+    "validate-prover": "npx hardhat run ./script/validate_prover_test.js --network server_L2_1",
+    "dvp-test-L1": "npx hardhat run ./script/dvp_test_L1.js --network server_L1_besu",
+    "dvp-sanity": "npx hardhat run ./script/dvp_sanity_test.js",
+    "drex-test": "npx hardhat run ./script/drex_connect_selic.js",
+    "drex-deploy-contracts-L1": "npx hardhat run ./script/drex_connect_selic.js",
+    "drex-wholesale": "npx hardhat run ./script/drex_connect_selic_wholesale.js",
+    "drex-retail": "npx hardhat run ./script/drex_connect_selic_retail.js",
+    "drex-cross-bank": "npx hardhat run ./script/drex_connect_selic_cross_bank.js",
+    "drex-internal-bank-tx": "npx hardhat run ./script/drex_connect_selic_internal_client_tx.js"
+  }
+}
