@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "BN256",
+  "sourceName": "contracts/nova/sol/curve.sol",
+  "abi": [],
+  "bytecode": "0x608060405234601a57604051603f6020823930815050603f90f35b600080fdfe6080604052600080fdfea264697066735822122026a5ea3b4113da55920df7699cd9691ea6f239e0e44c16327af02eae94fb56da64736f6c63430008190033",
+  "deployedBytecode": "0x6080604052600080fdfea264697066735822122026a5ea3b4113da55920df7699cd9691ea6f239e0e44c16327af02eae94fb56da64736f6c63430008190033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

@@ -1,0 +1,49 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "HamsaInternalEvents",
+  "sourceName": "contracts/hamsa/ucl/util/HamsaInternalEvents.sol",
+  "abi": [
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "blockNum",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "bundleHash",
+          "type": "uint256"
+        }
+      ],
+      "name": "BundleExpire",
+      "type": "event"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "blockNum",
+          "type": "uint256"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "bundleHash",
+          "type": "uint256"
+        }
+      ],
+      "name": "BundleFill",
+      "type": "event"
+    }
+  ],
+  "bytecode": "0x608060405234601657604051603f601c8239603f90f35b600080fdfe6080604052600080fdfea2646970667358221220778c600a06048185d30ab3b906fb1826754321268b2bdc93b413837e45a4d15864736f6c63430008190033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220778c600a06048185d30ab3b906fb1826754321268b2bdc93b413837e45a4d15864736f6c63430008190033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "StorageSlot",
+  "sourceName": "@openzeppelin/contracts/utils/StorageSlot.sol",
+  "abi": [],
+  "bytecode": "0x608060405234601a57604051603f6020823930815050603f90f35b600080fdfe6080604052600080fdfea26469706673582212200c3f51ab87aec2d6f59f5d6b06380a2432461a90ca3411071667c9ae6ff54c0f64736f6c63430008190033",
+  "deployedBytecode": "0x6080604052600080fdfea26469706673582212200c3f51ab87aec2d6f59f5d6b06380a2432461a90ca3411071667c9ae6ff54c0f64736f6c63430008190033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

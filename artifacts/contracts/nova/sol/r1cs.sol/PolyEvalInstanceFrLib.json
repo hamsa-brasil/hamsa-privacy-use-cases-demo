@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "PolyEvalInstanceFrLib",
+  "sourceName": "contracts/nova/sol/r1cs.sol",
+  "abi": [],
+  "bytecode": "0x608060405234601a57604051603f6020823930815050603f90f35b600080fdfe6080604052600080fdfea2646970667358221220fd9dd15d8412dab99374ffd4dc385b53ffecb40395575eaed6718ef9c8ec64cb64736f6c63430008190033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220fd9dd15d8412dab99374ffd4dc385b53ffecb40395575eaed6718ef9c8ec64cb64736f6c63430008190033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

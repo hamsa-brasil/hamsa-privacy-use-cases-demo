@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "FrOps",
+  "sourceName": "contracts/nova/sol/fr.sol",
+  "abi": [],
+  "bytecode": "0x608060405234601a57604051603f6020823930815050603f90f35b600080fdfe6080604052600080fdfea2646970667358221220d7f2c781157f996f0ecf3c2586deb1b07243eaba1e405e61b7a722d981722a3564736f6c63430008190033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220d7f2c781157f996f0ecf3c2586deb1b07243eaba1e405e61b7a722d981722a3564736f6c63430008190033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

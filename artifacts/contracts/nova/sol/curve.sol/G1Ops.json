@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "G1Ops",
+  "sourceName": "contracts/nova/sol/curve.sol",
+  "abi": [],
+  "bytecode": "0x608060405234601a57604051603f6020823930815050603f90f35b600080fdfe6080604052600080fdfea2646970667358221220ec202d9cd1b77abcb1dad008c860d5a6e8d7e403ee91295223605b22952633b264736f6c63430008190033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220ec202d9cd1b77abcb1dad008c860d5a6e8d7e403ee91295223605b22952633b264736f6c63430008190033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

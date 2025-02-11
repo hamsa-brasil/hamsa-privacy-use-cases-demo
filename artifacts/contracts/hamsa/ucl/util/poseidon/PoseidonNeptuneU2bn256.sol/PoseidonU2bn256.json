@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "PoseidonU2bn256",
+  "sourceName": "contracts/hamsa/ucl/util/poseidon/PoseidonNeptuneU2bn256.sol",
+  "abi": [],
+  "bytecode": "0x608060405234601a57604051603f6020823930815050603f90f35b600080fdfe6080604052600080fdfea2646970667358221220c0da78dda51780315d66676df8999bcf509c6562a82a96f4a8bb3a5006a7c95d64736f6c63430008190033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220c0da78dda51780315d66676df8999bcf509c6562a82a96f4a8bb3a5006a7c95d64736f6c63430008190033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

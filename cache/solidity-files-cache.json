@@ -1,0 +1,4155 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/common/TransparentProxy.sol": {
+      "lastModificationDate": 1739195809595,
+      "contentHash": "de70eeef5ac84d756339e74db20b0583",
+      "sourceName": "contracts/common/TransparentProxy.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol",
+        "@openzeppelin/contracts/access/Ownable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "TransparentProxy"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/access/Ownable.sol": {
+      "lastModificationDate": 1739204449593,
+      "contentHash": "d3c790edc9ccf808a17c5a6cd13614fd",
+      "sourceName": "@openzeppelin/contracts/access/Ownable.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Ownable"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol": {
+      "lastModificationDate": 1739204449634,
+      "contentHash": "590d996fc7a20c09841f7d1c0dce7aaa",
+      "sourceName": "@openzeppelin/contracts/proxy/transparent/TransparentUpgradeableProxy.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../ERC1967/ERC1967Utils.sol",
+        "../ERC1967/ERC1967Proxy.sol",
+        "../../interfaces/IERC1967.sol",
+        "./ProxyAdmin.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ITransparentUpgradeableProxy",
+        "TransparentUpgradeableProxy"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/utils/Context.sol": {
+      "lastModificationDate": 1739204449310,
+      "contentHash": "67bfbc07588eb8683b3fd8f6f909563e",
+      "sourceName": "@openzeppelin/contracts/utils/Context.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Context"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/interfaces/IERC1967.sol": {
+      "lastModificationDate": 1739204449536,
+      "contentHash": "4e17c826a54a8ee1a185449d4695d07d",
+      "sourceName": "@openzeppelin/contracts/interfaces/IERC1967.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC1967"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/proxy/ERC1967/ERC1967Utils.sol": {
+      "lastModificationDate": 1739204449419,
+      "contentHash": "405dda10d03b5eabd05700d23cc601ec",
+      "sourceName": "@openzeppelin/contracts/proxy/ERC1967/ERC1967Utils.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../beacon/IBeacon.sol",
+        "../../interfaces/IERC1967.sol",
+        "../../utils/Address.sol",
+        "../../utils/StorageSlot.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.21"
+      ],
+      "artifacts": [
+        "ERC1967Utils"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol": {
+      "lastModificationDate": 1739204449417,
+      "contentHash": "50db9cb02db403252c427d216aa6007f",
+      "sourceName": "@openzeppelin/contracts/proxy/ERC1967/ERC1967Proxy.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Proxy.sol",
+        "./ERC1967Utils.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ERC1967Proxy"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/proxy/transparent/ProxyAdmin.sol": {
+      "lastModificationDate": 1739204449608,
+      "contentHash": "b96b9abe7393a6eb20528d70e7af9fad",
+      "sourceName": "@openzeppelin/contracts/proxy/transparent/ProxyAdmin.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./TransparentUpgradeableProxy.sol",
+        "../../access/Ownable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ProxyAdmin"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/utils/Address.sol": {
+      "lastModificationDate": 1739204449282,
+      "contentHash": "553fc9ae17d9c00fd1c301b760781e26",
+      "sourceName": "@openzeppelin/contracts/utils/Address.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Errors.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Address"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/utils/StorageSlot.sol": {
+      "lastModificationDate": 1739204449626,
+      "contentHash": "e656d64c4ce918f3d13030b91c935134",
+      "sourceName": "@openzeppelin/contracts/utils/StorageSlot.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "StorageSlot"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/proxy/beacon/IBeacon.sol": {
+      "lastModificationDate": 1739204449516,
+      "contentHash": "0a5c323fd908535580597848b8e550fb",
+      "sourceName": "@openzeppelin/contracts/proxy/beacon/IBeacon.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IBeacon"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/utils/Errors.sol": {
+      "lastModificationDate": 1739204449483,
+      "contentHash": "6b5eac2b85500c3012977849cfd633d8",
+      "sourceName": "@openzeppelin/contracts/utils/Errors.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Errors"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/proxy/Proxy.sol": {
+      "lastModificationDate": 1739204449606,
+      "contentHash": "35308c2fa7be99a959494c37e8257c16",
+      "sourceName": "@openzeppelin/contracts/proxy/Proxy.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Proxy"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol": {
+      "lastModificationDate": 1739204449432,
+      "contentHash": "273d8d24b06f67207dd5f35c3a0c1086",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../ERC20.sol",
+        "../../../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ERC20Burnable"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/token/ERC20/ERC20.sol": {
+      "lastModificationDate": 1739204449429,
+      "contentHash": "38910c3dfa5e3778fac8888b1d714084",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC20.sol",
+        "./extensions/IERC20Metadata.sol",
+        "../../utils/Context.sol",
+        "../../interfaces/draft-IERC6093.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ERC20"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/interfaces/draft-IERC6093.sol": {
+      "lastModificationDate": 1739204449350,
+      "contentHash": "267d92fe4de67b1bdb3302c08f387dbf",
+      "sourceName": "@openzeppelin/contracts/interfaces/draft-IERC6093.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC1155Errors",
+        "IERC20Errors",
+        "IERC721Errors"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/token/ERC20/IERC20.sol": {
+      "lastModificationDate": 1739204449538,
+      "contentHash": "8f19f64d2adadf448840908bbaf431c8",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/IERC20.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC20"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol": {
+      "lastModificationDate": 1739204449540,
+      "contentHash": "794db3115001aa372c79326fcfd44b1f",
+      "sourceName": "@openzeppelin/contracts/token/ERC20/extensions/IERC20Metadata.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC20.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC20Metadata"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/token/ERC1155/utils/ERC1155Utils.sol": {
+      "lastModificationDate": 1739204449400,
+      "contentHash": "346f1d25727e87df31335bbbc03a6c20",
+      "sourceName": "@openzeppelin/contracts/token/ERC1155/utils/ERC1155Utils.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC1155Receiver.sol",
+        "../../../interfaces/draft-IERC6093.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ERC1155Utils"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol": {
+      "lastModificationDate": 1739204449527,
+      "contentHash": "a1c249dfb5f349be0b4fc85e635dfd59",
+      "sourceName": "@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../utils/introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC1155Receiver"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/utils/introspection/IERC165.sol": {
+      "lastModificationDate": 1739204449533,
+      "contentHash": "bf0119eb2a570f219729ff38b6cd1df8",
+      "sourceName": "@openzeppelin/contracts/utils/introspection/IERC165.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC165"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/utils/introspection/ERC165.sol": {
+      "lastModificationDate": 1739204449412,
+      "contentHash": "7c03c1e37c3dc24eafb76dc2b8a5c3a6",
+      "sourceName": "@openzeppelin/contracts/utils/introspection/ERC165.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ERC165"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/token/ERC1155/ERC1155.sol": {
+      "lastModificationDate": 1739204449377,
+      "contentHash": "7c7e5fac496b72e79ede7720a44a887c",
+      "sourceName": "@openzeppelin/contracts/token/ERC1155/ERC1155.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IERC1155.sol",
+        "./extensions/IERC1155MetadataURI.sol",
+        "./utils/ERC1155Utils.sol",
+        "../../utils/Context.sol",
+        "../../utils/introspection/ERC165.sol",
+        "../../utils/Arrays.sol",
+        "../../interfaces/draft-IERC6093.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "ERC1155"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/token/ERC1155/IERC1155.sol": {
+      "lastModificationDate": 1739204449522,
+      "contentHash": "1c608119423d96df908c14227957bd75",
+      "sourceName": "@openzeppelin/contracts/token/ERC1155/IERC1155.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../utils/introspection/IERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC1155"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/utils/Arrays.sol": {
+      "lastModificationDate": 1739204449285,
+      "contentHash": "d7ecd50ca59f27485f37e919aeb0392a",
+      "sourceName": "@openzeppelin/contracts/utils/Arrays.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./Comparators.sol",
+        "./SlotDerivation.sol",
+        "./StorageSlot.sol",
+        "./math/Math.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Arrays"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/token/ERC1155/extensions/IERC1155MetadataURI.sol": {
+      "lastModificationDate": 1739204449525,
+      "contentHash": "f8867afd172ace7ffa75d3752d785770",
+      "sourceName": "@openzeppelin/contracts/token/ERC1155/extensions/IERC1155MetadataURI.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../IERC1155.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IERC1155MetadataURI"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/utils/Comparators.sol": {
+      "lastModificationDate": 1739204449308,
+      "contentHash": "0e57405a6f979853cbfeb0df3546c3a3",
+      "sourceName": "@openzeppelin/contracts/utils/Comparators.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Comparators"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/utils/SlotDerivation.sol": {
+      "lastModificationDate": 1739204449625,
+      "contentHash": "b1b4d2a2542c75ed7ce12036009f3617",
+      "sourceName": "@openzeppelin/contracts/utils/SlotDerivation.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "SlotDerivation"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/utils/math/Math.sol": {
+      "lastModificationDate": 1739204449586,
+      "contentHash": "2b2665ae9bdb1af440658741a77fe213",
+      "sourceName": "@openzeppelin/contracts/utils/math/Math.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../Panic.sol",
+        "./SafeCast.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Math"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/utils/Panic.sol": {
+      "lastModificationDate": 1739204449604,
+      "contentHash": "2133dc13536b4a6a98131e431fac59e1",
+      "sourceName": "@openzeppelin/contracts/utils/Panic.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Panic"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/utils/math/SafeCast.sol": {
+      "lastModificationDate": 1739204449617,
+      "contentHash": "2adca1150f58fc6f3d1f0a0f22ee7cca",
+      "sourceName": "@openzeppelin/contracts/utils/math/SafeCast.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "SafeCast"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/drex-connect/ITPFt.sol": {
+      "lastModificationDate": 1739195846720,
+      "contentHash": "97d17fc9011757c8aac9ef634c855411",
+      "sourceName": "contracts/hamsa/drex-connect/ITPFt.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC1155/IERC1155.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ITPFt"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/drex-connect/TPFtOperation1052.sol": {
+      "lastModificationDate": 1739195860203,
+      "contentHash": "e36af9f14711e3be8d2013daddf40516",
+      "sourceName": "contracts/hamsa/drex-connect/TPFtOperation1052.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ITPFt.sol",
+        "./ITPFtOperation1052.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "TPFtOperation1052"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/drex-connect/ITPFtOperation1052.sol": {
+      "lastModificationDate": 1739195860898,
+      "contentHash": "0f96c54423eeb99fcb424b1ac955eb15",
+      "sourceName": "contracts/hamsa/drex-connect/ITPFtOperation1052.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ITPFt.sol",
+        "./IRealTokenizado.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ITPFtOperation1052"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/drex-connect/IRealTokenizado.sol": {
+      "lastModificationDate": 1739195852097,
+      "contentHash": "3c134caed33c71c18b69bc749c9e5461",
+      "sourceName": "contracts/hamsa/drex-connect/IRealTokenizado.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IRealDigital.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IRealTokenizado"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/drex-connect/IRealDigital.sol": {
+      "lastModificationDate": 1739195847562,
+      "contentHash": "dbc8e57e392380d506f303923924a2f7",
+      "sourceName": "contracts/hamsa/drex-connect/IRealDigital.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "IRealDigital"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/drex-connect/ITPFtDvP.sol": {
+      "lastModificationDate": 1739195857222,
+      "contentHash": "8bb822455b14837ba21c360c5574aaf9",
+      "sourceName": "contracts/hamsa/drex-connect/ITPFtDvP.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IRealTokenizado.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ITPFtDvP"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/drex-connect/TPFtDvP.sol": {
+      "lastModificationDate": 1739195854077,
+      "contentHash": "e1043b7ea4c27412b2dc96cf38baab79",
+      "sourceName": "contracts/hamsa/drex-connect/TPFtDvP.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./AddressDiscovery.sol",
+        "./ITPFt.sol",
+        "./ITPFtDvP.sol",
+        "./RealDigital.sol",
+        "./RealTokenizado.sol",
+        "./SwapOneStepFrom.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "TPFtDvP"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/drex-connect/RealTokenizado.sol": {
+      "lastModificationDate": 1739195857867,
+      "contentHash": "d55c587130822bf8f328100d7e582b84",
+      "sourceName": "contracts/hamsa/drex-connect/RealTokenizado.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./RealDigital.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "RealTokenizado"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/drex-connect/SwapOneStepFrom.sol": {
+      "lastModificationDate": 1739195858916,
+      "contentHash": "37e6dab6e8d82bc08a36484ce73b89b7",
+      "sourceName": "contracts/hamsa/drex-connect/SwapOneStepFrom.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./RealDigital.sol",
+        "./RealTokenizado.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "SwapOneStepFrom"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/drex-connect/AddressDiscovery.sol": {
+      "lastModificationDate": 1739195856502,
+      "contentHash": "3967014b72bbb67a47d9929232a2df1b",
+      "sourceName": "contracts/hamsa/drex-connect/AddressDiscovery.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/access/AccessControl.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "AddressDiscovery"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/drex-connect/RealDigital.sol": {
+      "lastModificationDate": 1739195851452,
+      "contentHash": "542c399f6bfb9cd8af7035fe49edbe2c",
+      "sourceName": "contracts/hamsa/drex-connect/RealDigital.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/ERC20.sol",
+        "@openzeppelin/contracts/utils/Pausable.sol",
+        "./CBDCAccessControl.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "RealDigital"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/drex-connect/CBDCAccessControl.sol": {
+      "lastModificationDate": 1739195850523,
+      "contentHash": "0fded5e3e891e27e06dc24efedef6421",
+      "sourceName": "contracts/hamsa/drex-connect/CBDCAccessControl.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/access/AccessControl.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "CBDCAccessControl"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/utils/Pausable.sol": {
+      "lastModificationDate": 1739204449604,
+      "contentHash": "24e52f6ef3868e6fca664a423140bee9",
+      "sourceName": "@openzeppelin/contracts/utils/Pausable.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../utils/Context.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "Pausable"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/access/AccessControl.sol": {
+      "lastModificationDate": 1739204449263,
+      "contentHash": "4c80b7fdf559a9a348e832a57d072a0b",
+      "sourceName": "@openzeppelin/contracts/access/AccessControl.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IAccessControl.sol",
+        "../utils/Context.sol",
+        "../utils/introspection/ERC165.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "AccessControl"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/@openzeppelin/contracts/access/IAccessControl.sol": {
+      "lastModificationDate": 1739204449510,
+      "contentHash": "6f7fac9fa0df6004375e18b7ff7edf4e",
+      "sourceName": "@openzeppelin/contracts/access/IAccessControl.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.20"
+      ],
+      "artifacts": [
+        "IAccessControl"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/drex-connect/SwapTwoSteps.sol": {
+      "lastModificationDate": 1739195846086,
+      "contentHash": "a3e9065216e57404a1c2f0c5742c55cd",
+      "sourceName": "contracts/hamsa/drex-connect/SwapTwoSteps.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./RealDigital.sol",
+        "./RealTokenizado.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "SwapTwoSteps"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/drex-connect/SwapOneStep.sol": {
+      "lastModificationDate": 1739195863759,
+      "contentHash": "5d55b3c53e014ce109120655c6205ef8",
+      "sourceName": "contracts/hamsa/drex-connect/SwapOneStep.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./RealDigital.sol",
+        "./RealTokenizado.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "SwapOneStep"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/drex-connect/RealTokenizadoFactory.sol": {
+      "lastModificationDate": 1739195849683,
+      "contentHash": "76412b8b17c13169fe207bfeaaad1ba9",
+      "sourceName": "contracts/hamsa/drex-connect/RealTokenizadoFactory.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./RealTokenizado.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "RealTokenizadoFactory"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/drex-connect/STR.sol": {
+      "lastModificationDate": 1739195854722,
+      "contentHash": "53b1a65ea2c43e1e645ae5cd7fe3a3d3",
+      "sourceName": "contracts/hamsa/drex-connect/STR.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./RealDigital.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "STR"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/drex-connect/RealDigitalDefaultAccount.sol": {
+      "lastModificationDate": 1739195844124,
+      "contentHash": "4d7dcfcf2abb9fe46227af4ef989b469",
+      "sourceName": "contracts/hamsa/drex-connect/RealDigitalDefaultAccount.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/access/AccessControl.sol",
+        "./RealDigital.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "RealDigitalDefaultAccount"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/drex-connect/TPFtAccessControl.sol": {
+      "lastModificationDate": 1739195852832,
+      "contentHash": "b6da55c722f1e6b876b8b6ccba192798",
+      "sourceName": "contracts/hamsa/drex-connect/TPFtAccessControl.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/access/AccessControl.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "TPFtAccessControl"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/drex-connect/TPFt.sol": {
+      "lastModificationDate": 1739195845164,
+      "contentHash": "417e6c19fd5b1ebfb63fd677bb866806",
+      "sourceName": "contracts/hamsa/drex-connect/TPFt.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/utils/introspection/IERC165.sol",
+        "@openzeppelin/contracts/token/ERC1155/ERC1155.sol",
+        "@openzeppelin/contracts/utils/Pausable.sol",
+        "./TPFtAccessControl.sol",
+        "./ITPFt.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "TPFt"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/drex-connect/RealDigitalEnableAccount.sol": {
+      "lastModificationDate": 1739195855453,
+      "contentHash": "5b341489711fa81be1cd663f89fd6ad5",
+      "sourceName": "contracts/hamsa/drex-connect/RealDigitalEnableAccount.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./CBDCAccessControl.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "RealDigitalEnableAccount"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/drex-connect/KeyDictionary.sol": {
+      "lastModificationDate": 1739195863170,
+      "contentHash": "0dfaf8c44e6740e97483f2b8148cfe77",
+      "sourceName": "contracts/hamsa/drex-connect/KeyDictionary.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./RealDigital.sol"
+      ],
+      "versionPragmas": [
+        ">=0.7.0 <0.9.0"
+      ],
+      "artifacts": [
+        "KeyDictionary"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/drex-connect/TPFtOperation1002.sol": {
+      "lastModificationDate": 1739195864375,
+      "contentHash": "d414ea5955bebccd3bb1d68bafcdc867",
+      "sourceName": "contracts/hamsa/drex-connect/TPFtOperation1002.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ITPFt.sol",
+        "./ITPFtOperation1002.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "TPFtOperation1002"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/drex-connect/ITPFtOperation1002.sol": {
+      "lastModificationDate": 1739195848365,
+      "contentHash": "a5b5918ba818c1d3dde3a370ccc17769",
+      "sourceName": "contracts/hamsa/drex-connect/ITPFtOperation1002.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./ITPFt.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "ITPFtOperation1002"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/ucl/DvpEscrow.sol": {
+      "lastModificationDate": 1739195866316,
+      "contentHash": "15d44b4837ef7117c512672687ff652e",
+      "sourceName": "contracts/hamsa/ucl/DvpEscrow.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IDvpERC.sol",
+        "@openzeppelin/contracts/token/ERC1155/IERC1155Receiver.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "DvpEscrow"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/ucl/IDvpERC.sol": {
+      "lastModificationDate": 1739195868594,
+      "contentHash": "39d89499a0d11f24bd6042497241ff8d",
+      "sourceName": "contracts/hamsa/ucl/IDvpERC.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "IBurn",
+        "IMint",
+        "ITransfer"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/ucl/DvpEscort.sol": {
+      "lastModificationDate": 1739195865543,
+      "contentHash": "1ddc72b6de0df24be34cf47569761a68",
+      "sourceName": "contracts/hamsa/ucl/DvpEscort.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./IDvpERC.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "DvpEscort"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/nova/Simple.sol": {
+      "lastModificationDate": 1739195812499,
+      "contentHash": "4949910246b3d95e5ca6cc82b3c4dfed",
+      "sourceName": "contracts/nova/Simple.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol"
+      ],
+      "versionPragmas": [],
+      "artifacts": [
+        "Simple"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/ucl/HamsaToken.sol": {
+      "lastModificationDate": 1739195868116,
+      "contentHash": "04ee8170f296cd531b62f80214a11463",
+      "sourceName": "contracts/hamsa/ucl/HamsaToken.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "@openzeppelin/contracts/token/ERC20/extensions/ERC20Burnable.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "HamsaToken"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/poseidon/PoseidonHasher.sol": {
+      "lastModificationDate": 1739195843170,
+      "contentHash": "4f4c638d3c159ade9f1b9ac5a6538557",
+      "sourceName": "contracts/hamsa/poseidon/PoseidonHasher.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./PoseidonNeptuneU2bn256.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "PoseidonU2bn256Hasher"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/poseidon/PoseidonNeptuneU2bn256.sol": {
+      "lastModificationDate": 1739195842686,
+      "contentHash": "d27a7ae48492c738d815e059e42967b6",
+      "sourceName": "contracts/hamsa/poseidon/PoseidonNeptuneU2bn256.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "PoseidonU2bn256"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/poseidon/SimplePoseidon.sol": {
+      "lastModificationDate": 1739195840348,
+      "contentHash": "cd8182ee73ad2b079f217d5dbeeb2ca6",
+      "sourceName": "contracts/hamsa/poseidon/SimplePoseidon.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./PoseidonHasher.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "SimplePoseidon"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/ucl/DvpMatch.sol": {
+      "lastModificationDate": 1739195867516,
+      "contentHash": "bb4a1cabad06de22a97755887a2da3a1",
+      "sourceName": "contracts/hamsa/ucl/DvpMatch.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./util/PoseidonHasher.sol",
+        "./util/poseidonT4.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "DvpMatch"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/ucl/util/PoseidonHasher.sol": {
+      "lastModificationDate": 1739195872558,
+      "contentHash": "ffb4728dd874d88f9dec4940e5a738e8",
+      "sourceName": "contracts/hamsa/ucl/util/PoseidonHasher.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "PoseidonHasher"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/ucl/util/poseidonT4.sol": {
+      "lastModificationDate": 1739195876150,
+      "contentHash": "ad6aea8abf90445e2fd10af282003785",
+      "sourceName": "contracts/hamsa/ucl/util/poseidonT4.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "PoseidonT4"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/ucl/util/HashChain.sol": {
+      "lastModificationDate": 1739195873837,
+      "contentHash": "b50b7c93090a5ed3dfadd5fcb676ec47",
+      "sourceName": "contracts/hamsa/ucl/util/HashChain.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../util/PoseidonHasher.sol"
+      ],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "HashChain"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/ucl/util/HamsaInternalEvents.sol": {
+      "lastModificationDate": 1739195873035,
+      "contentHash": "a1f94e7f3c6489e09554a215939132c3",
+      "sourceName": "contracts/hamsa/ucl/util/HamsaInternalEvents.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "HamsaInternalEvents"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/hamsa/ucl/util/poseidon/PoseidonNeptuneU2bn256.sol": {
+      "lastModificationDate": 1739195870953,
+      "contentHash": "d27a7ae48492c738d815e059e42967b6",
+      "sourceName": "contracts/hamsa/ucl/util/poseidon/PoseidonNeptuneU2bn256.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "PoseidonU2bn256"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/nova/sol/compressed.sol": {
+      "lastModificationDate": 1739195838591,
+      "contentHash": "601e6f02afc45e53c8f921b936b9fd7d",
+      "sourceName": "contracts/nova/sol/compressed.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./r1cs.sol",
+        "./nifs.sol",
+        "./snark_sm.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.25"
+      ],
+      "artifacts": [
+        "CompressedSNARKLib",
+        "CompressedSNARKVerifierKeyLib"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/nova/sol/r1cs.sol": {
+      "lastModificationDate": 1739195831230,
+      "contentHash": "ea21f02a8a87d0a85465df3a0f6b2daa",
+      "sourceName": "contracts/nova/sol/r1cs.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./sumcheck.sol",
+        "./hyperkzg.sol",
+        "./transcript.sol",
+        "./library.sol",
+        "./polynomial.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.25"
+      ],
+      "artifacts": [
+        "BatchedRelaxedR1CSSNARKLib",
+        "BatchedRelaxedR1CSSNARKVerifierKeyLib",
+        "PolyEvalInstanceFrLib",
+        "R1CSInstanceLib",
+        "R1CSShapeSparkCommitmentLib",
+        "RelaxedR1CSInstanceGrumpkinLib",
+        "RelaxedR1CSInstanceLib",
+        "RelaxedR1CSInstanceWithMCCompressedLib",
+        "RelaxedR1CSSNARKLib",
+        "RelaxedR1CSSNARKVerifierKeyLib"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/nova/sol/nifs.sol": {
+      "lastModificationDate": 1739195833948,
+      "contentHash": "078849260a9782ec8c66defc20454dee",
+      "sourceName": "contracts/nova/sol/nifs.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./curve.sol",
+        "./transcript.sol",
+        "./r1cs.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.25"
+      ],
+      "artifacts": [
+        "NIFSLib",
+        "NIFSRelaxedLib"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/nova/sol/snark_sm.sol": {
+      "lastModificationDate": 1739195827789,
+      "contentHash": "45f51b7f0808b04e5ca6ff6d0c6af531",
+      "sourceName": "contracts/nova/sol/snark_sm.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./transcript.sol",
+        "./sumcheck.sol",
+        "./r1cs.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.25"
+      ],
+      "artifacts": [
+        "PolyEvalInstanceFqLib",
+        "RelaxedR1CSSNARKForSMLib"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/nova/sol/sumcheck.sol": {
+      "lastModificationDate": 1739195828653,
+      "contentHash": "43ccd20e545e80410dbe81fe4c5e54bd",
+      "sourceName": "contracts/nova/sol/sumcheck.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./transcript.sol",
+        "./error.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.25"
+      ],
+      "artifacts": [
+        "CompressedUniPolyFqLib",
+        "CompressedUniPolyFrLib",
+        "SumcheckProofFqLib",
+        "SumcheckProofFrLib",
+        "UniPolyFqLib",
+        "UniPolyFrLib"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/nova/sol/hyperkzg.sol": {
+      "lastModificationDate": 1739195837265,
+      "contentHash": "3ece424dc177141b0be88d93d5580a52",
+      "sourceName": "contracts/nova/sol/hyperkzg.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./fq.sol",
+        "./fr.sol",
+        "./curve.sol",
+        "./transcript.sol",
+        "./library.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.25"
+      ],
+      "artifacts": [
+        "HyperKZG",
+        "HyperKZGEvaluationArgumentLib",
+        "HyperKZGVerifierKeyLib",
+        "HyperKZGVerifierTestLib"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/nova/sol/library.sol": {
+      "lastModificationDate": 1739195829137,
+      "contentHash": "a3e7859152bfaaed2ef48cb06d99075a",
+      "sourceName": "contracts/nova/sol/library.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./fr.sol",
+        "./fq.sol",
+        "./error.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.25"
+      ],
+      "artifacts": [
+        "testLibrary"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/nova/sol/polynomial.sol": {
+      "lastModificationDate": 1739195833469,
+      "contentHash": "81b57a6614cb23ba463d048891ca2345",
+      "sourceName": "contracts/nova/sol/polynomial.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./fr.sol",
+        "./fq.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.25"
+      ],
+      "artifacts": [
+        "EqPolynomial",
+        "IdentityPolynomial",
+        "MaskedEqPolynomial",
+        "PowPolynomial",
+        "SparsePolynomial"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/nova/sol/transcript.sol": {
+      "lastModificationDate": 1739195835261,
+      "contentHash": "cd501657006aaf2c791720d9d60e32a4",
+      "sourceName": "contracts/nova/sol/transcript.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./fr.sol",
+        "./fq.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.25"
+      ],
+      "artifacts": [
+        "Keccak256Transcript",
+        "TranscriptLib"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/nova/sol/error.sol": {
+      "lastModificationDate": 1739195832393,
+      "contentHash": "6d8c0db57cd977351e5394b825f7c395",
+      "sourceName": "contracts/nova/sol/error.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.8.25"
+      ],
+      "artifacts": []
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/nova/sol/fr.sol": {
+      "lastModificationDate": 1739195836544,
+      "contentHash": "3b91b9228d0a5f776de7cf0a2afc91e2",
+      "sourceName": "contracts/nova/sol/fr.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./transcript.sol",
+        "./library.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.25"
+      ],
+      "artifacts": [
+        "FrLib",
+        "FrOps"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/nova/sol/fq.sol": {
+      "lastModificationDate": 1739195834428,
+      "contentHash": "e391aaadabb789ad64e0da328e16e405",
+      "sourceName": "contracts/nova/sol/fq.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./transcript.sol",
+        "./library.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.25"
+      ],
+      "artifacts": [
+        "FqLib",
+        "FqOps"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/nova/sol/curve.sol": {
+      "lastModificationDate": 1739195837869,
+      "contentHash": "5a48c79b09aa37b28efba69bd7cdf9f3",
+      "sourceName": "contracts/nova/sol/curve.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./fq.sol",
+        "./fr.sol",
+        "./transcript.sol",
+        "./library.sol",
+        "./error.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.25"
+      ],
+      "artifacts": [
+        "BN256",
+        "G1Lib",
+        "G1Ops",
+        "G2Lib",
+        "GrumpkinLib",
+        "GrumpkinOps",
+        "testBN256"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/nova/sol/verifier.sol": {
+      "lastModificationDate": 1739195836066,
+      "contentHash": "dbbbb4de2fa13e89d908c5b0ca8a8c16",
+      "sourceName": "contracts/nova/sol/verifier.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "./compressed.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.25"
+      ],
+      "artifacts": [
+        "ZkVerifier"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/nova/test/generated/simple_verifier.sol": {
+      "lastModificationDate": 1739195815481,
+      "contentHash": "fd3b0889aa88b20ba23ab71949433e2b",
+      "sourceName": "contracts/nova/test/generated/simple_verifier.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../sol/verifier.sol",
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.25"
+      ],
+      "artifacts": [
+        "SimpleVerifier"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/node_modules/hardhat/console.sol": {
+      "lastModificationDate": 1739204449808,
+      "contentHash": "681c532e816169606d13a5fe8b475074",
+      "sourceName": "hardhat/console.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.4.22 <0.9.0"
+      ],
+      "artifacts": [
+        "console"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/nova/test/generated/merkel_root_strorage.sol": {
+      "lastModificationDate": 1739195818965,
+      "contentHash": "1a7a1a805b50b11b828f72a3a5a102df",
+      "sourceName": "contracts/nova/test/generated/merkel_root_strorage.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../sol/verifier.sol",
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.25"
+      ],
+      "artifacts": [
+        "RootStorage"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/nova/test/generated/compressed_snark_NonTrivialCircuit0.t.sol": {
+      "lastModificationDate": 1739195821435,
+      "contentHash": "7c1a49b04ff203ad66aae0b77bba6933",
+      "sourceName": "contracts/nova/test/generated/compressed_snark_NonTrivialCircuit0.t.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../sol/verifier.sol",
+        "hardhat/console.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.25"
+      ],
+      "artifacts": [
+        "TestCompressedSNARK_NonTrivialCircuit0"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/nova/test/generated/compressed_snark_NonTrivialCircuit56718.t.sol": {
+      "lastModificationDate": 1739195815000,
+      "contentHash": "881aa5fa3d3ca02394b2049e712b61f5",
+      "sourceName": "contracts/nova/test/generated/compressed_snark_NonTrivialCircuit56718.t.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../sol/verifier.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.25"
+      ],
+      "artifacts": [
+        "TestCompressedSNARK_NonTrivialCircuit56718"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/nova/test/generated/compressed_snark_NonTrivialCircuit187790.t.sol": {
+      "lastModificationDate": 1739195818484,
+      "contentHash": "32a9c5168cf865a773f53e639b8fa113",
+      "sourceName": "contracts/nova/test/generated/compressed_snark_NonTrivialCircuit187790.t.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../../sol/verifier.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.25"
+      ],
+      "artifacts": [
+        "TestCompressedSNARK_NonTrivialCircuit187790"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/nova/test/compressed_snark.t.sol": {
+      "lastModificationDate": 1739195824155,
+      "contentHash": "b8bbacbf0e406608022e31847ff401cd",
+      "sourceName": "contracts/nova/test/compressed_snark.t.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [
+        "../sol/verifier.sol"
+      ],
+      "versionPragmas": [
+        ">=0.8.25"
+      ],
+      "artifacts": [
+        "TestCompressedSNARK"
+      ]
+    },
+    "/Users/adriano.carvalho/Hamsa/hamsa-privacy/hamsa-privacy-use-cases-demo/contracts/nova/templates/compressed_snark.t.askama.sol": {
+      "lastModificationDate": 1739195811699,
+      "contentHash": "2fb1696e0787288c5b82586643b037a0",
+      "sourceName": "contracts/nova/templates/compressed_snark.t.askama.sol",
+      "solcConfig": {
+        "version": "0.8.25",
+        "settings": {
+          "optimizer": {
+            "enabled": true,
+            "runs": 200,
+            "details": {
+              "yulDetails": {
+                "optimizerSteps": "u"
+              }
+            }
+          },
+          "viaIR": true,
+          "evmVersion": "paris",
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        ">=0.8.25"
+      ],
+      "artifacts": []
+    }
+  }
+}

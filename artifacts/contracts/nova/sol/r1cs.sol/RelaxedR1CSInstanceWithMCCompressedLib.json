@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "RelaxedR1CSInstanceWithMCCompressedLib",
+  "sourceName": "contracts/nova/sol/r1cs.sol",
+  "abi": [],
+  "bytecode": "0x608060405234601a57604051603f6020823930815050603f90f35b600080fdfe6080604052600080fdfea2646970667358221220b87ff6d258402e6a4ff9ce98e2d1f5d5ecf9c58514ff2de2452522f22de4ab7364736f6c63430008190033",
+  "deployedBytecode": "0x6080604052600080fdfea2646970667358221220b87ff6d258402e6a4ff9ce98e2d1f5d5ecf9c58514ff2de2452522f22de4ab7364736f6c63430008190033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

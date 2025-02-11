@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "IdentityPolynomial",
+  "sourceName": "contracts/nova/sol/polynomial.sol",
+  "abi": [],
+  "bytecode": "0x608060405234601a57604051603f6020823930815050603f90f35b600080fdfe6080604052600080fdfea26469706673582212208dfdf69b5736daa933e5f1dceea9ba99a3156f027769d85af042c2873b22f3b464736f6c63430008190033",
+  "deployedBytecode": "0x6080604052600080fdfea26469706673582212208dfdf69b5736daa933e5f1dceea9ba99a3156f027769d85af042c2873b22f3b464736f6c63430008190033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}

@@ -1,0 +1,10 @@
+{
+  "_format": "hh-sol-artifact-1",
+  "contractName": "ERC1155Utils",
+  "sourceName": "@openzeppelin/contracts/token/ERC1155/utils/ERC1155Utils.sol",
+  "abi": [],
+  "bytecode": "0x608060405234601a57604051603f6020823930815050603f90f35b600080fdfe6080604052600080fdfea26469706673582212207b04786d5c7d2c869d64b47ae625c300d26f0f1a3e29571fb8c63069d4ce191e64736f6c63430008190033",
+  "deployedBytecode": "0x6080604052600080fdfea26469706673582212207b04786d5c7d2c869d64b47ae625c300d26f0f1a3e29571fb8c63069d4ce191e64736f6c63430008190033",
+  "linkReferences": {},
+  "deployedLinkReferences": {}
+}
