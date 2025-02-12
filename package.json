@@ -30,6 +30,7 @@
     "dvp-sanity": "npx hardhat run ./script/dvp_sanity_test.js",
     "drex-test": "npx hardhat run ./script/drex_connect_selic.js",
     "drex-deploy-contracts-L1": "npx hardhat run ./script/drex_connect_selic.js",
+    "drex-deploy-contracts-L2": "npx hardhat run ./script/drex_connect_selic_progress.js",
     "drex-wholesale": "npx hardhat run ./script/drex_connect_selic_wholesale.js",
     "drex-retail": "npx hardhat run ./script/drex_connect_selic_retail.js",
     "drex-cross-bank": "npx hardhat run ./script/drex_connect_selic_cross_bank.js",
