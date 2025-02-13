@@ -2675,7 +2675,7 @@ async function checkBundleTransaction(bankInfo, bundleHash) {
       "eth_checkTransactionBundle",
       [bundleHash]
     );
-    console.log("BundleTransaction", BundleTransaction);
+    if (LOG_LEVEL > 0) console.log("BundleTransaction", BundleTransaction);
     status = BundleTransaction?.Status;
   }
 }

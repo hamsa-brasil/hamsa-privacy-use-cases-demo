@@ -5,7 +5,8 @@ const crypto = require("crypto");
 const hardhatConfig = require("../hardhat.config");
 const getAnswer = require("./utils/prompt");
 const runTasks = require("./utils/runTasks");
-const { title } = require("process");
+
+const LOG_LEVEL = process.env.LOG_LEVEL ?? 0
 
 const customNetwork = {
   name: "UCL",
@@ -2678,7 +2679,7 @@ async function checkBundleTransaction(bankInfo, bundleHash) {
       "eth_checkTransactionBundle",
       [bundleHash]
     );
-    console.log("BundleTransaction", BundleTransaction);
+    if (LOG_LEVEL > 0) console.log("BundleTransaction", BundleTransaction);
     status = BundleTransaction?.Status;
   }
 }
