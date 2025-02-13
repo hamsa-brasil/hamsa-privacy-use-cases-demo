@@ -171,7 +171,7 @@ const maturityDate = 1755734400;
 
 // TODO Replace the deployed Discovery contract address
 // let addressDiscoveryAddress = "0x78Df50284Bf941e19c5155dA07Bd53A99eC5Dd85";
-let addressDiscoveryAddress = "0x967A6DB5b048b49CfBEC4a1B1D8b00ec12D1d298";
+let addressDiscoveryAddress = process.env.ADDRESS_DISCOVERY ?? "0x967A6DB5b048b49CfBEC4a1B1D8b00ec12D1d298";
 
 const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
 
@@ -2802,7 +2802,6 @@ async function client1InBank1TransferClient2InBank2() {
 
 async function bankBuyTpftFromOtherBankProcess() {
 
-
   // await getAnswer(
   //   "Give a Address Discovery genereated by L1 contracts deployment: ",
   //   (data) => {
@@ -2828,11 +2827,11 @@ async function bankBuyTpftFromOtherBankProcess() {
 
   await runTasks([
     {
-      title: 'Setting amount of Real Digital',
+      title: 'Set amount of Real Digital',
       fn: () => console.log('Setted 100 RD')
     },
     {
-      title: 'Setting amount of TPFt',
+      title: 'Set amount of TPFt',
       fn: () => console.log('Setted 1 TPFt')
     },
     {
