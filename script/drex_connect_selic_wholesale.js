@@ -2,8 +2,10 @@ const hre = require("hardhat");
 const { ethers } = hre;
 const p = require("poseidon-lite");
 const crypto = require("crypto");
-const hardhatConfig = require("../hardhat.config.hamsa");
+const hardhatConfig = require("../hardhat.config");
 const getAnswer = require("./utils/prompt");
+const runTasks = require("./utils/runTasks");
+const { title } = require("process");
 
 const customNetwork = {
   name: "UCL",
@@ -2799,28 +2801,60 @@ async function client1InBank1TransferClient2InBank2() {
 }
 
 async function bankBuyTpftFromOtherBankProcess() {
-  await getAnswer(
-    "Give a Address Discovery genereated by L1 contracts deployment: ",
-    (data) => {
-      if (!data) {
-        console.error(
-          "This operation needs the Address Discovery. Run it again\n\n"
-        );
-        process.exit(0);
-      } else {
-        addressDiscoveryAddress = data;
-        console.info(`Thanks! Let's go!\n\n`);
-      }
-    }
-  );
+
+
+  // await getAnswer(
+  //   "Give a Address Discovery genereated by L1 contracts deployment: ",
+  //   (data) => {
+  //     if (!data) {
+  //       console.error(
+  //         "This operation needs the Address Discovery. Run it again\n\n"
+  //       );
+  //       process.exit(0);
+  //     } else {
+  //       addressDiscoveryAddress = data;
+  //       console.info(`Thanks! Let's go!\n\n`);
+  //     }
+  //   }
+  // );
 
   let tpftAmount = 1;
   let unitPrice = 100;
   tpftAmount = tpftAmount * 100;
   const realDigitalAmount = tpftAmount * unitPrice;
-  await mintRd(bank1Info, realDigitalAmount);
-  await mintTpft(bank2Info, tpftAmount);
-  await bankBuyTpftFromOtherBank(bank1Info, bank2Info, tpftAmount, unitPrice);
+
+  console.info(`Real Digital to mint: ${displayBalance(realDigitalAmount)}`)
+  console.info(`TPFt to mint: ${displayBalance(tpftAmount)}`)
+
+  await runTasks([
+    {
+      title: 'Setting amount of Real Digital',
+      fn: () => console.log('Setted 100 RD')
+    },
+    {
+      title: 'Setting amount of TPFt',
+      fn: () => console.log('Setted 1 TPFt')
+    },
+    {
+      title: `Real Digital minting to ${bank1Info.bankName}`,
+      fn: mintRd,
+      args: [bank1Info, realDigitalAmount]
+    },
+    {
+      title: `TPFt minting to ${bank2Info.bankName}`,
+      fn: mintTpft,
+      args: [bank2Info, tpftAmount]
+    },
+    {
+      title: `Trade and transfer of ${bank1Info.bankName} ${displayBalance(realDigitalAmount)} Real Digital to ${bank2Info.bankName} ${displayBalance(tpftAmount)} TPFt`,
+      fn: bankBuyTpftFromOtherBank,
+      args: [bank1Info, bank2Info, tpftAmount, unitPrice]
+    }
+  ])
+
+  // await mintRd(bank1Info, realDigitalAmount);
+  // await mintTpft(bank2Info, tpftAmount);
+  // await bankBuyTpftFromOtherBank(bank1Info, bank2Info, tpftAmount, unitPrice);
 }
 
 async function clientBuyTpftFromInternalBankProcess() {
