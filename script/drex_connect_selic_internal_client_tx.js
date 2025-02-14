@@ -4,6 +4,7 @@ const p = require("poseidon-lite");
 const crypto = require("crypto");
 const hardhatConfig = require("../hardhat.config");
 const getAnswer = require("./utils/prompt");
+const runTasks = require("./utils/runTasks");
 
 const customNetwork = {
   name: "UCL",
@@ -169,7 +170,7 @@ const maturityDate = 1755734400;
 
 // TODO Replace the deployed Discovery contract address
 // let addressDiscoveryAddress = "0x78Df50284Bf941e19c5155dA07Bd53A99eC5Dd85";
-let addressDiscoveryAddress = "0x967A6DB5b048b49CfBEC4a1B1D8b00ec12D1d298";
+let addressDiscoveryAddress = process.env.ADDRESS_DISCOVERY ?? "0x967A6DB5b048b49CfBEC4a1B1D8b00ec12D1d298";
 
 const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
 
@@ -2780,24 +2781,34 @@ async function bank1TransferBank2InCentralBank() {
 }
 
 async function client1TransferClinet3InBank1() {
-  await getAnswer(
-    "Give a Address Discovery genereated by L1 contracts deployment: ",
-    (data) => {
-      if (!data) {
-        console.error(
-          "This operation needs the Address Discovery. Run it again\n\n"
-        );
-        process.exit(0);
-      } else {
-        addressDiscoveryAddress = data;
-        console.info(`Thanks! Let's go!\n\n`);
-      }
-    }
-  );
+  const realTokenizadoAmount = 10000
+  const realTokenizadoAmountTransfer = 100
 
-  await mintRt(bank1Info, client1, 10000);
-  await transferRt(bank1Info, client1, client3, 100);
-  await burnRt(bank1Info, client1, 200);
+  await runTasks([
+    {
+      title: 'Set amount of Real Tokenizado',
+      fn: () => console.log(`Real Tokenizado to mint: ${displayBalance(realTokenizadoAmount)}`)
+    },
+    {
+      title: 'Set amount of Real Digital',
+      fn: () => console.log(`Real Digital to mint: ${displayBalance(realDigitalAmount)}`)
+    },
+    {
+      title: `Real Tokenizado mint ${displayBalance(realTokenizadoAmount)} to ${client1.clientName} in ${bank1Info.bankName}. `,
+      fn: mintRt,
+      args: [bank1Info, client1, realTokenizadoAmount]
+    },
+    {
+      title: `Transferring ${displayBalance(realTokenizadoAmountTransfer)} Real Tokenizado from ${client1.clientName} to ${client3.clientName} in ${bank1Info.bankName}. `,
+      fn: transferRt,
+      args: [bank1Info, client1, client3, realTokenizadoAmountTransfer]
+    },
+    {
+      title: `Burning ${displayBalance(realTokenizadoAmountTransfer)} Real Tokenizado from ${client1.clientName} in ${bank1Info.bankName}. `,
+      fn: burnRt,
+      args: [bank1Info, client1, 200]
+    }
+  ])
 }
 
 async function client1InBank1TransferClient2InBank2() {

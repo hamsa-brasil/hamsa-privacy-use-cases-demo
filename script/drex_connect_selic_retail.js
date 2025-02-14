@@ -4,6 +4,7 @@ const p = require("poseidon-lite");
 const crypto = require("crypto");
 const hardhatConfig = require("../hardhat.config");
 const getAnswer = require("./utils/prompt");
+const runTasks = require("./utils/runTasks");
 
 const customNetwork = {
   name: "UCL",
@@ -169,7 +170,7 @@ const maturityDate = 1755734400;
 
 // TODO Replace the deployed Discovery contract address
 // let addressDiscoveryAddress = "0x78Df50284Bf941e19c5155dA07Bd53A99eC5Dd85";
-let addressDiscoveryAddress = "0x967A6DB5b048b49CfBEC4a1B1D8b00ec12D1d298";
+let addressDiscoveryAddress = process.env.ADDRESS_DISCOVERY ?? "0x967A6DB5b048b49CfBEC4a1B1D8b00ec12D1d298";
 
 const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
 
@@ -2835,36 +2836,48 @@ async function clientBuyTpftFromExternalBankProcess() {
 }
 
 async function clientBuyTpftFromExternalClientProcess() {
-  await getAnswer(
-    "Give a Address Discovery genereated by L1 contracts deployment: ",
-    (data) => {
-      if (!data) {
-        console.error(
-          "This operation needs the Address Discovery. Run it again\n\n"
-        );
-        process.exit(0);
-      } else {
-        addressDiscoveryAddress = data;
-        console.info(`Thanks! Let's go!\n\n`);
-      }
-    }
-  );
-
   let tpftAmount = 1;
   let unitPrice = 100;
   tpftAmount = tpftAmount * 100;
   const realDigitalAmount = tpftAmount * unitPrice;
-  await mintTpftToClient(client2, tpftAmount);
-  await mintRd(bank1Info, realDigitalAmount);
-  await mintRt(bank1Info, client1, realDigitalAmount);
-  await clientBuyFromExternalClient(
-    client1,
-    bank1Info,
-    client2,
-    bank2Info,
-    tpftAmount,
-    unitPrice
-  );
+
+  await runTasks([
+    {
+      title: 'Set amount of Real Digital',
+      fn: () => console.log(`Real Digital to mint: ${displayBalance(realDigitalAmount)}`)
+    },
+    {
+      title: 'Set amount of TPFt',
+      fn: () => console.log(`TPFt to mint: ${displayBalance(tpftAmount)}`)
+    },
+    {
+      title: `TPFt mint ${displayBalance(tpftAmount)} to ${client2.clientName}`,
+      fn: mintTpftToClient,
+      args: [client2, tpftAmount]
+    },
+    {
+      title: `Real Digital mint ${displayBalance(realDigitalAmount)} to ${bank1Info.bankName}`,
+      fn: mintRd,
+      args: [bank1Info, realDigitalAmount]
+    },
+    {
+      title: `Real Tokenizado mint ${realDigitalAmount} to ${client1.clientName} in ${bank1Info.bankName}`,
+      fn: mintRt,
+      args: [bank1Info, client1, realDigitalAmount]
+    },
+    {
+      title: `${client1.clientName} buy TPFt from ${client2.bankNumber} of the ${bank2Info.bankName}. Trade and Transfer. `,
+      fn: clientBuyFromExternalClient,
+      args: [
+        client1,
+        bank1Info,
+        client2,
+        bank2Info,
+        tpftAmount,
+        unitPrice
+      ]
+    }
+  ])
 }
 
 async function bankBuyTpftFromCentralTreasuryProcess() {

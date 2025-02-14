@@ -2821,19 +2821,16 @@ async function bankBuyTpftFromOtherBankProcess() {
   let tpftAmount = 1;
   let unitPrice = 100;
   tpftAmount = tpftAmount * 100;
-  const realDigitalAmount = tpftAmount * unitPrice;
-
-  console.info(`Real Digital to mint: ${displayBalance(realDigitalAmount)}`)
-  console.info(`TPFt to mint: ${displayBalance(tpftAmount)}`)
+  const realDigitalAmount = tpftAmount * unitPrice;  
 
   await runTasks([
     {
       title: 'Set amount of Real Digital',
-      fn: () => console.log('Setted 100 RD')
+      fn: () => console.log(`Real Digital to mint: ${displayBalance(realDigitalAmount)}`)
     },
     {
       title: 'Set amount of TPFt',
-      fn: () => console.log('Setted 1 TPFt')
+      fn: () => console.log(`TPFt to mint: ${displayBalance(tpftAmount)}`)
     },
     {
       title: `Real Digital minting to ${bank1Info.bankName}`,

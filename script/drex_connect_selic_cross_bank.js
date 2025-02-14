@@ -4,6 +4,7 @@ const p = require("poseidon-lite");
 const crypto = require("crypto");
 const hardhatConfig = require("../hardhat.config");
 const getAnswer = require("./utils/prompt");
+const runTasks = require("./utils/runTasks");
 
 const customNetwork = {
   name: "UCL",
@@ -169,7 +170,7 @@ const maturityDate = 1755734400;
 
 // TODO Replace the deployed Discovery contract address
 // let addressDiscoveryAddress = "0x78Df50284Bf941e19c5155dA07Bd53A99eC5Dd85";
-let addressDiscoveryAddress = "0x967A6DB5b048b49CfBEC4a1B1D8b00ec12D1d298";
+let addressDiscoveryAddress = process.env.ADDRESS_DISCOVERY ?? "0x967A6DB5b048b49CfBEC4a1B1D8b00ec12D1d298";
 
 const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
 
@@ -1041,7 +1042,7 @@ async function clientTransferRtToExternalClient(
   console.log("fromClient RT post balance", displayBalance(balance));
   balance = await receiverRealTokenizado.balanceOf(toClientInfo.wallet);
   console.log("toClient RT post balance", displayBalance(balance));
-  
+
   balance = await realDigital.balanceOf(fromBankInfo.address);
   console.log("fromBank RD post balance", displayBalance(balance));
 
@@ -1128,9 +1129,9 @@ async function bankBuyTpftFromOtherBank(
 ) {
   console.log(
     buyerBankInfo.bankName +
-      " buy Tpft from " +
-      sellerBankInfo.bankName +
-      " start..."
+    " buy Tpft from " +
+    sellerBankInfo.bankName +
+    " start..."
   );
 
   const operationId = generateOperationId();
@@ -1336,9 +1337,9 @@ async function bankBuyTpftFromOtherBank(
 
   console.log(
     buyerBankInfo.bankName +
-      " buy Tpft from " +
-      sellerBankInfo.bankName +
-      " done...\n"
+    " buy Tpft from " +
+    sellerBankInfo.bankName +
+    " done...\n"
   );
 }
 
@@ -1538,9 +1539,9 @@ async function clientBuyFromExternalBank(
 ) {
   console.log(
     buyerClientInfo.clientName +
-      " buy Tpft from " +
-      sellerBankInfo.bankName +
-      " start..."
+    " buy Tpft from " +
+    sellerBankInfo.bankName +
+    " start..."
   );
   const realDigitalAmount = tpftAmount * unitPrice;
   const operationId = generateOperationId();
@@ -1857,9 +1858,9 @@ async function clientBuyFromExternalBank(
 
   console.log(
     buyerClientInfo.clientName +
-      " buy Tpft from " +
-      sellerBankInfo.bankName +
-      " done...\n"
+    " buy Tpft from " +
+    sellerBankInfo.bankName +
+    " done...\n"
   );
 }
 
@@ -1873,10 +1874,10 @@ async function clientBuyFromExternalClient(
 ) {
   console.log(
     "client " +
-      buyerClientInfo.clientName +
-      " buy Tpft from client " +
-      sellerClientInfo.clientName +
-      " start..."
+    buyerClientInfo.clientName +
+    " buy Tpft from client " +
+    sellerClientInfo.clientName +
+    " start..."
   );
 
   const operationId = generateOperationId();
@@ -1957,9 +1958,9 @@ async function clientBuyFromExternalClient(
   // 3.1 buyerClient transfer RT to buyerBank
   console.log(
     "client " +
-      buyerClientInfo.clientName +
-      " transfer RT to " +
-      buyerBankInfo.bankName
+    buyerClientInfo.clientName +
+    " transfer RT to " +
+    buyerBankInfo.bankName
   );
   buyerClientWallet = new ethers.Wallet(
     buyerClientInfo.privateKey,
@@ -2007,9 +2008,9 @@ async function clientBuyFromExternalClient(
   // 3.2 sellerClient transfer tpft to buyerClient
   console.log(
     "client " +
-      sellerClientInfo.clientName +
-      " transfer tpft to " +
-      buyerClientInfo.clientName
+    sellerClientInfo.clientName +
+    " transfer tpft to " +
+    buyerClientInfo.clientName
   );
   sellerClientWallet = new ethers.Wallet(
     sellerClientInfo.privateKey,
@@ -2792,30 +2793,39 @@ async function client1TransferClinet3InBank1() {
 }
 
 async function client1InBank1TransferClient2InBank2() {
-  await getAnswer(
-    "Give a Address Discovery genereated by L1 contracts deployment: ",
-    (data) => {
-      if (!data) {
-        console.error(
-          "This operation needs the Address Discovery. Run it again\n\n"
-        );
-        process.exit(0);
-      } else {
-        addressDiscoveryAddress = data;
-        console.info(`Thanks! Let's go!\n\n`);
-      }
-    }
-  );
+  const realDigitalAmount = 200
 
-  await mintRt(bank1Info, client1, 200);
-  await mintRd(bank1Info, 200);
-  await clientTransferRtToExternalClient(
-    bank1Info,
-    bank2Info,
-    client1,
-    client2,
-    200
-  );
+  await runTasks([
+    {
+      title: 'Set amount of Real Tokenizado',
+      fn: () => console.log(`Real Tokenizado to mint: ${displayBalance(realDigitalAmount)}`)
+    },
+    {
+      title: 'Set amount of Real Digital',
+      fn: () => console.log(`Real Digital to mint: ${displayBalance(realDigitalAmount)}`)
+    },
+    {
+      title: `Real Tokenizado mint ${realDigitalAmount} to ${client1.clientName} in ${bank1Info.bankName}`,
+      fn: mintRt,
+      args: [bank1Info, client1, realDigitalAmount]
+    },
+    {
+      title: `Real Digital mint ${displayBalance(realDigitalAmount)} to ${bank1Info.bankName}`,
+      fn: mintRd,
+      args: [bank1Info, realDigitalAmount]
+    },
+    {
+      title: `${client1.clientName} from ${bank1Info.bankName} transfer  Real Tokenizado to ${client2.clientName} in ${bank2Info.bankName}.`,
+      fn: clientTransferRtToExternalClient,
+      args: [
+        bank1Info,
+        bank2Info,
+        client1,
+        client2,
+        realDigitalAmount
+      ]
+    }
+  ])
 }
 
 async function bankBuyTpftFromOtherBankProcess() {

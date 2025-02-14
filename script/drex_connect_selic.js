@@ -3,6 +3,7 @@ const { ethers } = hre;
 const p = require("poseidon-lite");
 const crypto = require("crypto");
 const hardhatConfig = require("../hardhat.config");
+const runTasks = require("./utils/runTasks");
 
 const customNetwork = {
     name: "UCL",
@@ -168,7 +169,7 @@ const maturityDate = 1755734400;
 
 // TODO Replace the deployed Discovery contract address
 // let addressDiscoveryAddress = "0x78Df50284Bf941e19c5155dA07Bd53A99eC5Dd85";
-let addressDiscoveryAddress = "0x1A565846A792C993BEa323C9A7e935c62B96A0D4";
+let addressDiscoveryAddress = process.env.ADDRESS_DISCOVERY ?? "0x967A6DB5b048b49CfBEC4a1B1D8b00ec12D1d298";
 
 const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
 
@@ -194,6 +195,7 @@ function sleep(ms) {
  * After deployment, it updates the addresses of these contracts in the AddressDiscovery contract.
  */
 async function deployOnCentralBankNode() {
+    try {
     let centralBankWallet = new ethers.Wallet(
         centralBankInfo.privateKey,
         centralBankInfo.provider
@@ -335,6 +337,9 @@ async function deployOnCentralBankNode() {
     console.log("deployOnCentralBankNode done...");
 
     return addressDiscoveryContract.target;
+} catch (error){
+    console.error(error)
+}
 }
 
 async function deployOnSelicNode() {
@@ -2773,79 +2778,59 @@ async function task(title, step, total_steps, callback, args = []) {
 
 }
 
-async function runTasks(tasks = []) {
-    if (!!tasks.length) {
-        console.log(`The steps are: \n`)
-        console.log(tasks.map((t, index) => `${index + 1}. ${t.title}`).join("\n"))
-        console.log("\n")
-
-        for (const [index, task] of tasks.entries()) {
-            const step = index + 1
-            console.log(`\n🔹 ${step}. Starting ${task.title}: ${index + 1} of ${tasks.length}\n`)
-            if (task.fn.constructor.name === "AsyncFunction") await task.fn.apply(null, task.args)
-            else task.fn.call(null, task.args)
-            console.log(`\n✅ Step ${index + 1} of ${tasks.length} done\n`)
-        }
-    }
-}
-
 async function deployDrex() {
-    try {
-        await runTasks([
-            {
-                title: `Deploy Central Bank node contracts`,
-                fn: deployOnCentralBankNode,
-                args: []
-            },
-            {
-                title: `Deploy Selic node contracts`,
-                fn: deployOnSelicNode,
-                args: []
-            },
-            {
-                title: "Deploy Bank A node contracts",
-                fn: deployOnBankNode,
-                args: [bank1Info],
-            },
-            {
-                title: "Deploy Bank B node contracts",
-                fn: deployOnBankNode,
-                args: [bank2Info],
-            },
-            {
-                title: `Authorizing and granting on the ${centralBankInfo.bankName} node`,
-                fn: authorizeOnCentralBankNode,
-                args: []
-            },
-            {
-                title: `Authorizing and granting on the ${selicInfo.bankName} node`,
-                fn: authorizeOnSelicNode,
-                args: []
-            },
-            {
-                title: `Authorizing and granting Client 1 on the ${bank1Info.bankName} node`,
-                fn: authorizeOnBankNode,
-                args: [bank1Info, client1]
-            },
-            {
-                title: `Authorizing and granting Client 2 on the ${bank2Info.bankName} node`,
-                fn: authorizeOnBankNode,
-                args: [bank2Info, client2]
-            },
-            {
-                title: `Authorizing and granting Client 3 on the ${bank1Info.bankName} node`,
-                fn: authorizeOnBankNode,
-                args: [bank1Info, client3]
-            },
-            {
-                title: `Creating TPFt to the ${selicInfo.bankName} wallet`,
-                fn: createTpft,
-                args: []
-            },
-        ])
-    } catch (error) {
-        console.log(error)
-    }
+    await runTasks([
+        {
+            title: `Deploy Central Bank node contracts`,
+            fn: deployOnCentralBankNode,
+            args: []
+        },
+        {
+            title: `Deploy Selic node contracts`,
+            fn: deployOnSelicNode,
+            args: []
+        },
+        {
+            title: "Deploy Bank A node contracts",
+            fn: deployOnBankNode,
+            args: [bank1Info],
+        },
+        {
+            title: "Deploy Bank B node contracts",
+            fn: deployOnBankNode,
+            args: [bank2Info],
+        },
+        {
+            title: `Authorizing and granting on the ${centralBankInfo.bankName} node`,
+            fn: authorizeOnCentralBankNode,
+            args: []
+        },
+        {
+            title: `Authorizing and granting on the ${selicInfo.bankName} node`,
+            fn: authorizeOnSelicNode,
+            args: []
+        },
+        {
+            title: `Authorizing and granting Client 1 on the ${bank1Info.bankName} node`,
+            fn: authorizeOnBankNode,
+            args: [bank1Info, client1]
+        },
+        {
+            title: `Authorizing and granting Client 2 on the ${bank2Info.bankName} node`,
+            fn: authorizeOnBankNode,
+            args: [bank2Info, client2]
+        },
+        {
+            title: `Authorizing and granting Client 3 on the ${bank1Info.bankName} node`,
+            fn: authorizeOnBankNode,
+            args: [bank1Info, client3]
+        },
+        {
+            title: `Creating TPFt to the ${selicInfo.bankName} wallet`,
+            fn: createTpft,
+            args: []
+        },
+    ])
 }
 
 async function bank1TransferBank2InCentralBank() {
