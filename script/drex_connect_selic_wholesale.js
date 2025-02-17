@@ -2,8 +2,11 @@ const hre = require("hardhat");
 const { ethers } = hre;
 const p = require("poseidon-lite");
 const crypto = require("crypto");
-const hardhatConfig = require("../hardhat.config.hamsa");
+const hardhatConfig = require("../hardhat.config");
 const getAnswer = require("./utils/prompt");
+const runTasks = require("./utils/runTasks");
+
+const LOG_LEVEL = process.env.LOG_LEVEL ?? 0
 
 const customNetwork = {
   name: "UCL",
@@ -169,7 +172,7 @@ const maturityDate = 1755734400;
 
 // TODO Replace the deployed Discovery contract address
 // let addressDiscoveryAddress = "0x78Df50284Bf941e19c5155dA07Bd53A99eC5Dd85";
-let addressDiscoveryAddress = "0x967A6DB5b048b49CfBEC4a1B1D8b00ec12D1d298";
+let addressDiscoveryAddress = process.env.ADDRESS_DISCOVERY ?? "0x967A6DB5b048b49CfBEC4a1B1D8b00ec12D1d298";
 
 const ZERO_ADDRESS = "0x0000000000000000000000000000000000000000";
 
@@ -2676,7 +2679,7 @@ async function checkBundleTransaction(bankInfo, bundleHash) {
       "eth_checkTransactionBundle",
       [bundleHash]
     );
-    console.log("BundleTransaction", BundleTransaction);
+    if (LOG_LEVEL > 0) console.log("BundleTransaction", BundleTransaction);
     status = BundleTransaction?.Status;
   }
 }
@@ -2799,28 +2802,56 @@ async function client1InBank1TransferClient2InBank2() {
 }
 
 async function bankBuyTpftFromOtherBankProcess() {
-  await getAnswer(
-    "Give a Address Discovery genereated by L1 contracts deployment: ",
-    (data) => {
-      if (!data) {
-        console.error(
-          "This operation needs the Address Discovery. Run it again\n\n"
-        );
-        process.exit(0);
-      } else {
-        addressDiscoveryAddress = data;
-        console.info(`Thanks! Let's go!\n\n`);
-      }
-    }
-  );
+
+  // await getAnswer(
+  //   "Give a Address Discovery genereated by L1 contracts deployment: ",
+  //   (data) => {
+  //     if (!data) {
+  //       console.error(
+  //         "This operation needs the Address Discovery. Run it again\n\n"
+  //       );
+  //       process.exit(0);
+  //     } else {
+  //       addressDiscoveryAddress = data;
+  //       console.info(`Thanks! Let's go!\n\n`);
+  //     }
+  //   }
+  // );
 
   let tpftAmount = 1;
   let unitPrice = 100;
   tpftAmount = tpftAmount * 100;
-  const realDigitalAmount = tpftAmount * unitPrice;
-  await mintRd(bank1Info, realDigitalAmount);
-  await mintTpft(bank2Info, tpftAmount);
-  await bankBuyTpftFromOtherBank(bank1Info, bank2Info, tpftAmount, unitPrice);
+  const realDigitalAmount = tpftAmount * unitPrice;  
+
+  await runTasks([
+    {
+      title: 'Set amount of Real Digital',
+      fn: () => console.log(`Real Digital to mint: ${displayBalance(realDigitalAmount)}`)
+    },
+    {
+      title: 'Set amount of TPFt',
+      fn: () => console.log(`TPFt to mint: ${displayBalance(tpftAmount)}`)
+    },
+    {
+      title: `Real Digital minting to ${bank1Info.bankName}`,
+      fn: mintRd,
+      args: [bank1Info, realDigitalAmount]
+    },
+    {
+      title: `TPFt minting to ${bank2Info.bankName}`,
+      fn: mintTpft,
+      args: [bank2Info, tpftAmount]
+    },
+    {
+      title: `Trade and transfer of ${bank1Info.bankName} ${displayBalance(realDigitalAmount)} Real Digital to ${bank2Info.bankName} ${displayBalance(tpftAmount)} TPFt`,
+      fn: bankBuyTpftFromOtherBank,
+      args: [bank1Info, bank2Info, tpftAmount, unitPrice]
+    }
+  ])
+
+  // await mintRd(bank1Info, realDigitalAmount);
+  // await mintTpft(bank2Info, tpftAmount);
+  // await bankBuyTpftFromOtherBank(bank1Info, bank2Info, tpftAmount, unitPrice);
 }
 
 async function clientBuyTpftFromInternalBankProcess() {

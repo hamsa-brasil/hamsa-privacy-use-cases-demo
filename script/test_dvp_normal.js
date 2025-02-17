@@ -104,7 +104,7 @@ async function getCDBCBalance() {
 
 async function getBundleTransaction(bundleHash, bankProvider) {
     let BundleTransaction = await bankProvider.send("eth_checkTransactionBundle", [bundleHash]);
-    console.log("BundleTransaction", BundleTransaction);
+    if (LOG_LEVEL > 0) console.log("BundleTransaction", BundleTransaction);
 }
 
 async function checkBundleTransaction(bundleHash, bankProvider) {
@@ -115,7 +115,7 @@ async function checkBundleTransaction(bundleHash, bankProvider) {
         // console.log("bundle status is not 2, continue fetch status, current status is : ", status);
         await sleep(2000);
         BundleTransaction = await bankProvider.send("eth_checkTransactionBundle", [bundleHash]);
-        console.log("BundleTransaction", BundleTransaction);
+        if (LOG_LEVEL > 0) console.log("BundleTransaction", BundleTransaction);
         status = BundleTransaction.Status;
     }
 }
@@ -203,7 +203,7 @@ describe("Test Check BundleHash", function () {
     //     // let bundleHash = '0x16e06156a60017743124872ac04eb7f33f3d8c02e0d65b94e88ca978bd058556';
     //     // let BundleTransaction = await bankAProvider.send("eth_checkTransactionBundle", [bundleHash]);
     //     let BundleTransaction = await bankAProvider.send("eth_getTransactionByHash", [bundleHash,false]);
-    //     console.log("BundleTransaction", BundleTransaction);
+    //     if (LOG_LEVEL > 0) console.log("BundleTransaction", BundleTransaction);
     // })
     it("node2", async () => {
         let bundleHash = '0x24878e048b4cb7a70cfc0271ea9004e4f832d781eb095d7d5c64474339c5c9d2';
