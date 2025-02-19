@@ -436,6 +436,8 @@ async function deployOnBankNode(bankInfo) {
     );
     let realDigitalEnableAccountContract =
         await realDigitalEnableAccountFactory.deploy(bankInfo.address);
+
+    await sleep(3000)
     await realDigitalEnableAccountContract.waitForDeployment();
     console.log(
         "RealDigitalEnableAccount address:",
@@ -457,6 +459,7 @@ async function deployOnBankNode(bankInfo) {
         bankInfo.cnpj8,
         bankInfo.address
     );
+    await sleep(3000)
     await realTokenizadoContract.waitForDeployment();
     console.log("RealTokenizado address:", realTokenizadoContract.target);
 
