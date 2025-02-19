@@ -211,6 +211,7 @@ async function deployOnCentralBankNode() {
     let addressDiscoveryContract = await addressDiscoveryFactory.deploy(
         centralBankInfo.address
     );
+    await sleep(5000)
     await addressDiscoveryContract.waitForDeployment();
     console.log(
         "AddressDiscovery address:",
@@ -232,7 +233,9 @@ async function deployOnCentralBankNode() {
         "BRL",
         centralBankInfo.address
     );
+    await sleep(3000)
     await realDigitalContract.waitForDeployment();
+    
     console.log("RealDigital address:", realDigitalContract.target);
 
     // Deploy the KeyDictionary contract, which maps keys to customer data.
@@ -244,6 +247,7 @@ async function deployOnCentralBankNode() {
     let keyDictionaryContract = await keyDictionaryFactory.deploy(
         realDigitalContract
     );
+    await sleep(3000)
     await keyDictionaryContract.waitForDeployment();
     console.log("KeyDictionary address:", keyDictionaryContract.target);
 
@@ -273,6 +277,7 @@ async function deployOnCentralBankNode() {
     );
     let realDigitalEnableAccountContract =
         await realDigitalEnableAccountFactory.deploy(centralBankInfo.address);
+    await sleep(3000)
     await realDigitalEnableAccountContract.waitForDeployment();
     console.log(
         "RealDigitalEnableAccount address:",
@@ -283,6 +288,7 @@ async function deployOnCentralBankNode() {
     console.log("deploying STR");
     let strFactory = await ethers.getContractFactory("STR", centralBankWallet);
     let strContract = await strFactory.deploy(realDigitalContract);
+    await sleep(3000)
     await strContract.waitForDeployment();
     console.log("STR address:", strContract.target);
 
@@ -351,6 +357,8 @@ async function deployOnSelicNode() {
     console.log("deploying TPFt");
     let tpftFactory = await ethers.getContractFactory("TPFt", selicWallet);
     let tpftContract = await tpftFactory.deploy();
+
+    await sleep(3000)
     await tpftContract.waitForDeployment();
     console.log("TPFt address:", tpftContract.target);
 
@@ -363,6 +371,7 @@ async function deployOnSelicNode() {
     let tpftOperation1002Contract = await tpftOperation1002Factory.deploy(
         centralBankInfo.address
     );
+    await sleep(3000)
     await tpftOperation1002Contract.waitForDeployment();
     console.log("TPFtOperation1002 address:", tpftOperation1002Contract.target);
 
@@ -375,6 +384,7 @@ async function deployOnSelicNode() {
     let tpftOperation1052Contract = await tpftOperation1052Factory.deploy(
         centralBankInfo.address
     );
+    await sleep(3000)
     await tpftOperation1052Contract.waitForDeployment();
     console.log("TPFtOperation1052 address:", tpftOperation1052Contract.target);
 

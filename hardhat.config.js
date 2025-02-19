@@ -38,7 +38,7 @@ module.exports = {
             ],
         },
         server_L2_1: {
-            url: 'http://4.157.93.136:8123',
+            url: 'http://48.216.151.18:8123',
             accounts: [
                 "555332672ce947d150d23a36bf3847078291f89bda7073829bb718c77d626787",//0xe46Fe251dd1d9FfC247bc0DDb6D61e4EE4416ecB
                 "6741001f80a9194d8d65f04d8b420940e83babc1a1dea5afa8775c395ed14ae8",//0x9E46a01F1A486095A073BFeB4B3c9e106dfB0e7E
@@ -47,7 +47,7 @@ module.exports = {
             ]
         },
         server_L2_2: {
-            url: 'http://51.8.39.85:8123',
+            url: 'http://51.8.19.99:8123',
             accounts: [
                 "555332672ce947d150d23a36bf3847078291f89bda7073829bb718c77d626787",//0xe46Fe251dd1d9FfC247bc0DDb6D61e4EE4416ecB
                 "6741001f80a9194d8d65f04d8b420940e83babc1a1dea5afa8775c395ed14ae8",//0x9E46a01F1A486095A073BFeB4B3c9e106dfB0e7E
@@ -56,7 +56,7 @@ module.exports = {
             ]
         },
         server_L2_3: {
-            url: 'http://135.234.194.74:8123',
+            url: 'http://57.152.5.164:8123',
             accounts: [
                 "555332672ce947d150d23a36bf3847078291f89bda7073829bb718c77d626787",//0xe46Fe251dd1d9FfC247bc0DDb6D61e4EE4416ecB
                 "6741001f80a9194d8d65f04d8b420940e83babc1a1dea5afa8775c395ed14ae8",//0x9E46a01F1A486095A073BFeB4B3c9e106dfB0e7E
@@ -65,7 +65,7 @@ module.exports = {
             ]
         },
         server_L2_4: {
-            url: 'http://135.237.31.140:8123',
+            url: 'http://135.234.254.70:8123',
             accounts: [
                 "555332672ce947d150d23a36bf3847078291f89bda7073829bb718c77d626787",//0xe46Fe251dd1d9FfC247bc0DDb6D61e4EE4416ecB
                 "6741001f80a9194d8d65f04d8b420940e83babc1a1dea5afa8775c395ed14ae8",//0x9E46a01F1A486095A073BFeB4B3c9e106dfB0e7E
