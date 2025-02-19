@@ -263,6 +263,7 @@ async function deployOnCentralBankNode() {
             centralBankInfo.address,
             centralBankInfo.address
         );
+    await sleep(3000)
     await realDigitalDefaultAccountContract.waitForDeployment();
     console.log(
         "RealDigitalDefaultAccount address:",
