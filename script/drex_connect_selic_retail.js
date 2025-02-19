@@ -6,6 +6,8 @@ const hardhatConfig = require("../hardhat.config");
 const getAnswer = require("./utils/prompt");
 const runTasks = require("./utils/runTasks");
 
+const LOG_LEVEL = process.env.LOG_LEVEL ?? 0
+
 const customNetwork = {
   name: "UCL",
   chainId: 1001,
@@ -689,7 +691,7 @@ async function mintRd(bankInfo, amount) {
   // Connects to the STR contract using the bank wallet.
   const str = (await getContract("STR", "STR")).connect(bankWallet);
   let tx = await str.requestToMint(amount);
-  await tx.wait();
+  await tx.wait(0);
 
   // Checks the balance of the bank after minting.
   balance = await realDigital.balanceOf(bankInfo.address);
@@ -728,7 +730,7 @@ async function transferRd(fromBankInfo, toBankInfo, amount) {
 
   // Initiates the transfer of the specified amount of RD to the recipient bank.
   let tx = await realDigital.transfer(toBankInfo.address, amount);
-  await tx.wait();
+  await tx.wait(0);
 
   // Checks the balance of the bank after transfer.
   balance = await realDigital.balanceOf(fromBankInfo.address);
@@ -763,14 +765,14 @@ async function burnRd(bankInfo, amount) {
 
   console.log("approving RD to STR");
   let tx = await realDigital.approve(str.target, amount);
-  await tx.wait();
+  await tx.wait(0);
 
   // Checks the balance of the bank before burn.
   let balance = await realDigital.balanceOf(bankInfo.address);
   console.log("bank RD pre balance", displayBalance(balance));
 
   tx = await str.requestToBurn(amount);
-  await tx.wait();
+  await tx.wait(0);
 
   balance = await realDigital.balanceOf(bankInfo.address);
   console.log("bank RD post balance", displayBalance(balance));
@@ -803,7 +805,7 @@ async function mintRt(bankInfo, clientInfo, amount) {
 
   // Mints the specified amount of RT to the client's wallet.
   let tx = await realTokenizado.mint(clientInfo.wallet, amount);
-  await tx.wait();
+  await tx.wait(0);
 
   // Checks the balance of the client's wallet after minting.
   balance = await realTokenizado.balanceOf(clientInfo.wallet);
@@ -848,7 +850,7 @@ async function transferRt(bankInfo, fromClientInfo, toClientInfo, amount) {
 
   // Initiates the transfer of RT to the recipient client's wallet.
   let tx = await realTokenizado.transfer(toClientInfo.wallet, amount);
-  await tx.wait();
+  await tx.wait(0);
 
   // Checks the balance of the client's wallet after the transfer.
   balance = await realTokenizado.balanceOf(fromClientInfo.wallet);
@@ -884,7 +886,7 @@ async function burnRt(bankInfo, clientInfo, amount) {
     await getContract("RealTokenizado@" + bankInfo.cnpj8, "RealTokenizado")
   ).connect(clientWallet);
   let tx = await realTokenizado.approve(bankWallet.address, amount);
-  await tx.wait();
+  await tx.wait(0);
 
   // Fetches the client's balance before the burn operation.
   let balance = await realTokenizado.balanceOf(clientInfo.wallet);
@@ -895,7 +897,7 @@ async function burnRt(bankInfo, clientInfo, amount) {
     await getContract("RealTokenizado@" + bankInfo.cnpj8, "RealTokenizado")
   ).connect(bankWallet);
   tx = await realTokenizado.burnFrom(clientInfo.wallet, amount);
-  await tx.wait();
+  await tx.wait(0);
 
   // Fetches the client's balance after the burn operation.
   balance = await realTokenizado.balanceOf(clientInfo.wallet);
@@ -943,7 +945,7 @@ async function clientTransferRtToExternalClient(
     fromBankInfo.dvpEscrotingAddress,
     amount
   );
-  await tx.wait();
+  await tx.wait(0);
   DvpEscortingFactory = await ethers.getContractFactory("DvpEscrow");
   DvpEscorting = DvpEscortingFactory.attach(
     fromBankInfo.dvpEscrotingAddress
@@ -959,7 +961,7 @@ async function clientTransferRtToExternalClient(
     expireTime: expire,
   };
   tx = await DvpEscorting.scheduleBurn(scheduleRequest);
-  await tx.wait();
+  await tx.wait(0);
 
   // toBank mint RT to toClient
   console.log("toBank mint RT to toClient...");
@@ -990,7 +992,7 @@ async function clientTransferRtToExternalClient(
     expireTime: expire,
   };
   tx = await DvpEscorting.scheduleMint(scheduleRequest);
-  await tx.wait();
+  await tx.wait(0);
 
   // fromBank transfer RD to toBank
   console.log("fromBank transfer RD to toBank...");
@@ -1009,7 +1011,7 @@ async function clientTransferRtToExternalClient(
   );
   console.log("toBank RD pre balance", displayBalance(balance));
   tx = await realDigital.approve(centralBankInfo.dvpEscrotingAddress, amount);
-  await tx.wait();
+  await tx.wait(0);
 
   DvpEscortingFactory = await ethers.getContractFactory("DvpEscrow");
   DvpEscorting = DvpEscortingFactory.attach(
@@ -1026,7 +1028,7 @@ async function clientTransferRtToExternalClient(
     expireTime: expire,
   };
   tx = await DvpEscorting.scheduleTransfer(scheduleRequest);
-  await tx.wait();
+  await tx.wait(0);
 
   // check bundle transaction
   console.log("\ncheck bundle transaction status...");
@@ -1216,7 +1218,7 @@ async function bankBuyTpftFromOtherBank(
     sellerBankInfo.dvpEscrotingAddress,
     realDigitalAmount
   );
-  await tx.wait();
+  await tx.wait(0);
   let DvpEscortingFactory = await ethers.getContractFactory("DvpEscrow");
   let DvpEscorting = DvpEscortingFactory.attach(
     centralBankInfo.dvpEscrotingAddress
@@ -1232,7 +1234,7 @@ async function bankBuyTpftFromOtherBank(
     expireTime: expire,
   };
   tx = await DvpEscorting.scheduleTransfer(scheduleRequest);
-  await tx.wait();
+  await tx.wait(0);
 
   // 3.2 sellerBank transfer tpft to buyerBank
   console.log(
@@ -1244,7 +1246,7 @@ async function bankBuyTpftFromOtherBank(
   );
   const tpft = (await getContract("TPFt", "TPFt")).connect(sellerBankWallet);
   tx = await tpft.setApprovalForAll(selicInfo.dvpEscrotingAddress, true);
-  await tx.wait();
+  await tx.wait(0);
   const id = await tpft.getTPFtId(tpftData);
   console.log("tpft id", id);
   balance = await tpft.balanceOf(sellerBankInfo.address, id);
@@ -1276,7 +1278,7 @@ async function bankBuyTpftFromOtherBank(
   ).connect(sellerBankWallet);
   console.log("schedule transfer tpft...");
   tx = await DvpEscorting.scheduleTransfer1155(scheduleRequest);
-  await tx.wait();
+  await tx.wait(0);
   // 3.3 check bundle transaction
   console.log("check bundle transaction status");
   await checkBundleTransaction(centralBankInfo.provider, bundleHash);
@@ -1426,7 +1428,7 @@ async function clientBuyFromInternalBank(
     bankInfo.dvpEscrotingAddress,
     realDigitalAmount
   );
-  await tx.wait();
+  await tx.wait(0);
   let DvpEscortingFactory = await ethers.getContractFactory("DvpEscrow");
   let DvpEscorting = DvpEscortingFactory.attach(
     bankInfo.dvpEscrotingAddress
@@ -1443,13 +1445,13 @@ async function clientBuyFromInternalBank(
   };
   console.log("schedule transfer RT...");
   tx = await DvpEscorting.scheduleTransfer(scheduleRequest);
-  await tx.wait();
+  await tx.wait(0);
   // 3.2 bank transfer tpft to client
   console.log(bankInfo.bankName + " transfer tpft to " + clientInfo.clientName);
   bankWallet = new ethers.Wallet(bankInfo.privateKey, selicInfo.provider);
   const tpft = (await getContract("TPFt", "TPFt")).connect(bankWallet);
   tx = await tpft.setApprovalForAll(selicInfo.dvpEscrotingAddress, true);
-  await tx.wait();
+  await tx.wait(0);
   const id = await tpft.getTPFtId(tpftData);
   console.log("id", id);
   balance = await tpft.balanceOf(bankInfo.address, id);
@@ -1474,7 +1476,7 @@ async function clientBuyFromInternalBank(
   ).connect(bankWallet);
   console.log("schedule transfer tpft...");
   tx = await DvpEscorting.scheduleTransfer1155(scheduleRequest);
-  await tx.wait();
+  await tx.wait(0);
   // 3.3 check bundle transaction
   console.log("check bundle transaction status");
   await checkBundleTransaction(bankInfo.provider, bundleHash);
@@ -1634,7 +1636,7 @@ async function clientBuyFromExternalBank(
     buyerBankInfo.dvpEscrotingAddress,
     realDigitalAmount
   );
-  await tx.wait();
+  await tx.wait(0);
   let DvpEscortingFactory = await ethers.getContractFactory("DvpEscrow");
   let DvpEscorting = DvpEscortingFactory.attach(
     buyerBankInfo.dvpEscrotingAddress
@@ -1651,7 +1653,7 @@ async function clientBuyFromExternalBank(
   };
   console.log("schedule transfer RT");
   tx = await DvpEscorting.scheduleTransfer(scheduleRequest);
-  await tx.wait();
+  await tx.wait(0);
   // 3.2 sellerBank transfer tpft to buyerClient
   console.log(
     sellerBankInfo.bankName + " transfer tpft to " + buyerClientInfo.clientName
@@ -1663,7 +1665,7 @@ async function clientBuyFromExternalBank(
   const tpft = (await getContract("TPFt", "TPFt")).connect(sellerBankWallet);
   console.log("setApprovalForAll");
   tx = await tpft.setApprovalForAll(selicInfo.dvpEscrotingAddress, true);
-  await tx.wait();
+  await tx.wait(0);
   const id = await tpft.getTPFtId(tpftData);
   console.log("tpft id", id);
   balance = await tpft.balanceOf(sellerBankInfo.address, id);
@@ -1686,7 +1688,7 @@ async function clientBuyFromExternalBank(
   ).connect(sellerBankWallet);
   console.log("schedule transfer tpft...");
   tx = await DvpEscorting.scheduleTransfer1155(scheduleRequest);
-  await tx.wait();
+  await tx.wait(0);
   // 3.3 check bundle transaction status
   console.log("check bundle transaction status");
   await checkBundleTransaction(buyerBankInfo.provider, bundleHash);
@@ -1744,7 +1746,7 @@ async function clientBuyFromExternalBank(
     buyerBankInfo.dvpEscrotingAddress,
     realDigitalAmount
   );
-  await tx.wait();
+  await tx.wait(0);
   DvpEscortingFactory = await ethers.getContractFactory("DvpEscrow");
   DvpEscorting = DvpEscortingFactory.attach(
     buyerBankInfo.dvpEscrotingAddress
@@ -1760,7 +1762,7 @@ async function clientBuyFromExternalBank(
     expireTime: expire,
   };
   tx = await DvpEscorting.scheduleBurn(scheduleRequest);
-  await tx.wait();
+  await tx.wait(0);
   // 3.6 buyerBank transfer RD to sellerBank
   console.log("buyerBank transfer RD to sellerBank");
   buyerBankWallet = new ethers.Wallet(
@@ -1787,7 +1789,7 @@ async function clientBuyFromExternalBank(
     centralBankInfo.dvpEscrotingAddress,
     realDigitalAmount
   );
-  await tx.wait();
+  await tx.wait(0);
   DvpEscortingFactory = await ethers.getContractFactory("DvpEscrow");
   DvpEscorting = DvpEscortingFactory.attach(
     centralBankInfo.dvpEscrotingAddress
@@ -1803,7 +1805,7 @@ async function clientBuyFromExternalBank(
     expireTime: expire,
   };
   tx = await DvpEscorting.scheduleTransfer(scheduleRequest);
-  await tx.wait();
+  await tx.wait(0);
   // 3.7 check bundle transaction status
   console.log("check bundle transaction status");
   await checkBundleTransaction(buyerBankInfo.provider, bundleHash2);
@@ -1981,7 +1983,7 @@ async function clientBuyFromExternalClient(
     buyerBankInfo.dvpEscrotingAddress,
     realDigitalAmount
   );
-  await tx.wait();
+  await tx.wait(0);
   let DvpEscortingFactory = await ethers.getContractFactory("DvpEscrow");
   let DvpEscorting = DvpEscortingFactory.attach(
     buyerBankInfo.dvpEscrotingAddress
@@ -1998,7 +2000,7 @@ async function clientBuyFromExternalClient(
   };
   console.log("schedule transfer RT");
   tx = await DvpEscorting.scheduleTransfer(scheduleRequest);
-  await tx.wait();
+  await tx.wait(0);
   // 3.2 sellerClient transfer tpft to buyerClient
   console.log(
     "client " +
@@ -2014,7 +2016,7 @@ async function clientBuyFromExternalClient(
   const id = await tpft.getTPFtId(tpftData);
   console.log("setApprovalForAll");
   tx = await tpft.setApprovalForAll(selicInfo.dvpEscrotingAddress, true);
-  await tx.wait();
+  await tx.wait(0);
   balance = await tpft.balanceOf(sellerClientInfo.wallet, id);
   console.log(
     "client " + sellerClientInfo.clientName + " tpft pre balance",
@@ -2043,7 +2045,7 @@ async function clientBuyFromExternalClient(
     selicInfo.dvpEscrotingAddress
   ).connect(sellerClientWallet);
   tx = await DvpEscorting.scheduleTransfer1155(scheduleRequest);
-  await tx.wait();
+  await tx.wait(0);
   // 3.3 sellerBank mint RT to sellerClient
   console.log(
     sellerBankInfo.bankName + " mint RT to " + sellerClientInfo.clientName
@@ -2078,7 +2080,7 @@ async function clientBuyFromExternalClient(
     expireTime: expire,
   };
   tx = await DvpEscorting.scheduleMint(scheduleRequest);
-  await tx.wait();
+  await tx.wait(0);
   // 3.4 check bundle transaction status
   console.log("check bundle transaction status");
   await checkBundleTransaction(buyerBankInfo.provider, bundleHash);
@@ -2146,7 +2148,7 @@ async function clientBuyFromExternalClient(
     buyerBankInfo.dvpEscrotingAddress,
     realDigitalAmount
   );
-  await tx.wait();
+  await tx.wait(0);
   DvpEscortingFactory = await ethers.getContractFactory("DvpEscrow");
   DvpEscorting = DvpEscortingFactory.attach(
     buyerBankInfo.dvpEscrotingAddress
@@ -2162,7 +2164,7 @@ async function clientBuyFromExternalClient(
     expireTime: expire,
   };
   tx = await DvpEscorting.scheduleBurn(scheduleRequest);
-  await tx.wait();
+  await tx.wait(0);
   // 3.7 buyerBank transfer RD to sellerBank
   console.log(
     buyerBankInfo.bankName + " transfer RD to " + sellerBankInfo.bankName
@@ -2191,7 +2193,7 @@ async function clientBuyFromExternalClient(
     centralBankInfo.dvpEscrotingAddress,
     realDigitalAmount
   );
-  await tx.wait();
+  await tx.wait(0);
   DvpEscortingFactory = await ethers.getContractFactory("DvpEscrow");
   DvpEscorting = DvpEscortingFactory.attach(
     centralBankInfo.dvpEscrotingAddress
@@ -2207,7 +2209,7 @@ async function clientBuyFromExternalClient(
     expireTime: expire,
   };
   tx = await DvpEscorting.scheduleTransfer(scheduleRequest);
-  await tx.wait();
+  await tx.wait(0);
   // 3.8 check bundle transaction status
   console.log("check bundle transaction status");
   await checkBundleTransaction(buyerBankInfo.provider, bundleHash2);
@@ -2356,7 +2358,7 @@ async function bankBuyTpftFromCentralTreasury(
     centralBankInfo.dvpEscrotingAddress,
     realDigitalAmount
   );
-  await tx.wait();
+  await tx.wait(0);
   DvpEscortingFactory = await ethers.getContractFactory("DvpEscrow");
   DvpEscorting = DvpEscortingFactory.attach(
     centralBankInfo.dvpEscrotingAddress
@@ -2372,7 +2374,7 @@ async function bankBuyTpftFromCentralTreasury(
     expireTime: expire,
   };
   tx = await DvpEscorting.scheduleTransfer(scheduleRequest);
-  await tx.wait();
+  await tx.wait(0);
   // 3.2 central treasury transfer TPFT to buyerBank
   console.log("central treasury transfer TPFT to " + buyerBankInfo.bankName);
   centralTreasuryWallet = new ethers.Wallet(
@@ -2384,7 +2386,7 @@ async function bankBuyTpftFromCentralTreasury(
   );
   const id = await tpft.getTPFtId(tpftData);
   tx = await tpft.setApprovalForAll(selicInfo.dvpEscrotingAddress, true);
-  await tx.wait();
+  await tx.wait(0);
   balance = await tpft.balanceOf(selicInfo.address, id);
   console.log(
     selicInfo.bankName + " TPFT pre balance",
@@ -2414,7 +2416,7 @@ async function bankBuyTpftFromCentralTreasury(
     expireTime: expire,
   };
   tx = await DvpEscorting.scheduleTransfer1155(scheduleRequest);
-  await tx.wait();
+  await tx.wait(0);
 
   // check bundle transaction status
   console.log("check bundle transaction status");
@@ -2497,7 +2499,7 @@ async function auctionPlacement(
     tpftAmount,
     unitPrice
   );
-  await tx.wait();
+  await tx.wait(0);
 }
 
 async function matchOrder1002(
@@ -2556,7 +2558,7 @@ async function tradeBank(
     tpftAmount,
     unitPrice
   );
-  await tx.wait();
+  await tx.wait(0);
 }
 
 async function trade(
@@ -2585,7 +2587,7 @@ async function trade(
     tpftAmount,
     unitPrice
   );
-  await tx.wait();
+  await tx.wait(0);
 }
 
 async function matchOrder1052(

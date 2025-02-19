@@ -26,7 +26,7 @@ module.exports = {
     networks: {
         server_L1_besu: {
             // url: 'http://191.235.32.253:8545',     //azure environment
-            url: 'http://20.51.130.255:8545',           // wlin-azure cluster
+            url: 'http://172.190.34.224:8545',           // wlin-azure cluster
             gasPrice:0,
             accounts: [
                 "32ef95df4ea8de4f6b5518106e97dbb3e5b97cdbb4a33adfeaa9f14e729f51eb",//fAdb253d9AD9b2d6D37471fA80F398f76D8347B8
@@ -38,7 +38,7 @@ module.exports = {
             ],
         },
         server_L2_1: {
-            url: 'http://51.8.200.4:8123',
+            url: 'http://4.157.93.136:8123',
             accounts: [
                 "555332672ce947d150d23a36bf3847078291f89bda7073829bb718c77d626787",//0xe46Fe251dd1d9FfC247bc0DDb6D61e4EE4416ecB
                 "6741001f80a9194d8d65f04d8b420940e83babc1a1dea5afa8775c395ed14ae8",//0x9E46a01F1A486095A073BFeB4B3c9e106dfB0e7E
@@ -47,7 +47,7 @@ module.exports = {
             ]
         },
         server_L2_2: {
-            url: 'http://4.156.34.202:8123',
+            url: 'http://51.8.39.85:8123',
             accounts: [
                 "555332672ce947d150d23a36bf3847078291f89bda7073829bb718c77d626787",//0xe46Fe251dd1d9FfC247bc0DDb6D61e4EE4416ecB
                 "6741001f80a9194d8d65f04d8b420940e83babc1a1dea5afa8775c395ed14ae8",//0x9E46a01F1A486095A073BFeB4B3c9e106dfB0e7E
@@ -56,7 +56,7 @@ module.exports = {
             ]
         },
         server_L2_3: {
-            url: 'http://4.157.112.6:8123',
+            url: 'http://135.234.194.74:8123',
             accounts: [
                 "555332672ce947d150d23a36bf3847078291f89bda7073829bb718c77d626787",//0xe46Fe251dd1d9FfC247bc0DDb6D61e4EE4416ecB
                 "6741001f80a9194d8d65f04d8b420940e83babc1a1dea5afa8775c395ed14ae8",//0x9E46a01F1A486095A073BFeB4B3c9e106dfB0e7E
@@ -65,7 +65,7 @@ module.exports = {
             ]
         },
         server_L2_4: {
-            url: 'http://135.237.111.21:8123',
+            url: 'http://135.237.31.140:8123',
             accounts: [
                 "555332672ce947d150d23a36bf3847078291f89bda7073829bb718c77d626787",//0xe46Fe251dd1d9FfC247bc0DDb6D61e4EE4416ecB
                 "6741001f80a9194d8d65f04d8b420940e83babc1a1dea5afa8775c395ed14ae8",//0x9E46a01F1A486095A073BFeB4B3c9e106dfB0e7E
