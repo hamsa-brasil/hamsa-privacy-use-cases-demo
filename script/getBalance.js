@@ -2,7 +2,7 @@ const hre = require("hardhat");
 const { ethers } = hre;
 const p = require("poseidon-lite");
 const crypto = require("crypto");
-const hardhatConfig = require("../hardhat.config.hamsa");
+const hardhatConfig = require("../hardhat.config");
 
 const customNetwork = {
     name: "UCL",
